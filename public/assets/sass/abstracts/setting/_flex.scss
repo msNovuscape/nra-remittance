@@ -1,0 +1,179 @@
+// Mixin for flex-wrap
+@mixin flex-wrp($wrp) {
+    @include rule(flex-wrap, $wrp);
+}
+
+@mixin flex__wrap {
+    @include flex-wrp($flex__wrap);
+}
+
+@mixin flex__nowrap {
+    @include flex-wrp($flex__nowrap);
+}
+
+// Mixin for flex-direction
+@mixin flex-dir($dir) {
+    @include rule(flex-direction, $dir);
+}
+
+@mixin flex-row {
+    @include flex-dir($flex__row);
+}
+
+@mixin flex-col {
+    @include flex-dir($flex__col);
+}
+
+// Mixin for flex-flow
+@mixin flex-flow($wrp, $dir) {
+    @include rule(flex-flow, $wrp $dir);
+}
+
+@mixin flex-flow-row {
+    @include flex-flow($flex__flow-row, null);
+}
+
+@mixin flex-flow-col {
+    @include flex-flow($flex__flow-col, null);
+}
+
+// Mixin for flex-align-items
+@mixin flex-align($type, $attr) {
+    @if $type == 'items' {
+        @include rule(align-items, $attr);
+    }
+    @if $type == 'content' {
+        @include rule(justify-content, $attr);
+    }
+}
+
+// Mixin for flex-align-items-stretch
+@mixin flex-items-stretch {
+    @include flex-align(items, $flex__stretch);
+}
+
+// Mixin for flex-align-items-baseline
+@mixin flex-items-base {
+    @include flex-align(items, $flex__base);
+}
+
+// Mixin for flex-align-items-start
+@mixin flex-items-start {
+    @include flex-align(items, $flex__left);
+}
+
+// Mixin for flex-justify-content-start
+@mixin flex-content-start {
+    @include flex-align(content, $flex__left);
+}
+
+// Mixin for flex-align-items-end
+@mixin flex-items-end {
+    @include flex-align(items, $flex__right);
+}
+
+// Mixin for flex-justify-content-end
+@mixin flex-content-end {
+    @include flex-align(content, $flex__right);
+}
+
+// Mixin for flex-align-items-center
+@mixin flex-items-center {
+    @include flex-align(items, $flex__center);
+}
+
+// Mixin for flex-justify-content-center
+@mixin flex-content-center {
+    @include flex-align(content, $flex__center);
+}
+
+// Mixin for flex-justify-content-space-between
+@mixin flex-content-between {
+    @include flex-align(content, $flex__between);
+}
+
+// Mixin for flex-justify-content-space-around
+@mixin flex-content-around {
+    @include flex-align(content, $flex__around);
+}
+
+// Mixin for flex-justify-content-space-even
+@mixin flex-content-even {
+    @include flex-align(content, $flex__even);
+}
+
+// Mixin for flex-basis
+@mixin flex-basis($val) {
+    @include rule(flex-basis, $val);
+    @include rule(max-width, $val);
+}
+
+// Mixin for flex-grow
+@mixin flex-grow($val) {
+    @include rule(flex-grow, $val);
+}
+
+// Mixin for flex-shrink
+@mixin flex-shrink($val) {
+    @include rule(flex-shrink, $val);
+}
+
+// Mixin for flex-order
+@mixin flex-order($val) {
+    @include rule(flex-order, $val);
+}
+
+// Mixin for flex-module-code
+@mixin flex-parent($dir, $wrp, $align, $content) {
+    .u--flex-#{$dir} {
+        @include flex;
+        @include flex-dir($dir);
+        @include flex-align(items, $align);
+        @include flex-align(content, $content);
+    }
+}
+
+@mixin flex-article($dir, $wrp, $align, $content) {
+    .u--flex-article-#{$content} {
+        @include flex;
+        @include flex-dir($dir);
+        @include flex-align(items, $align);
+        @include flex-align(content, $content);
+
+        @content;
+    }
+}
+
+@mixin flex-parent-row($align, $content) {
+    @include flex-parent($flex__row, $flex__wrap, $align, $content);
+}
+
+@mixin flex-parent-col($align, $content) {
+    @include flex-parent($flex__col, $flex__wrap, $align, $content);
+}
+
+@mixin flex-center-article {
+    @include flex-article($flex__col, $flex__wrap, $flex__left, $flex__center) {
+        & > * + * {
+            margin-top: 10px;
+        }
+    }
+}
+
+@mixin flex-left-article {
+    @include flex-article($flex__col, $flex__wrap, $flex__left, $flex__left) {
+        & > * + * {
+            margin-top: 10px;
+        }
+    }
+}
+
+@mixin flex-right-article {
+    @include flex-article($flex__col, $flex__wrap, $flex__left, $flex__right) {
+        & > * + * {
+            margin-top: 10px;
+        }
+    }
+}
+
+// @include flex-right-article;

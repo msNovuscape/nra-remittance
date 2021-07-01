@@ -1,0 +1,16 @@
+.flex {
+    @include flex;
+}
+.flex-items-center {
+    align-items: center;
+}
+.flex-cols-1-3 {
+    * {
+        &:first-child {
+            flex: 1;
+        }
+        &:last-child {
+            flex: 2;
+        }
+    }
+}

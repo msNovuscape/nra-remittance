@@ -1,0 +1,56 @@
+.header {
+    padding: 20px 0;
+    margin-bottom: 1.5rem;
+
+    .menu-trigger-btn {
+        padding: 10px;
+        @extend .bg-third, .text-white;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    .menu {
+        right: 0;
+        top: 50px;
+
+        list-style: none;
+        max-width: max-content;
+        // min-width: 300px;
+        margin: 0 0 0 auto;
+        @extend .text-left;
+        visibility: visible;
+        opacity: 1;
+        width: max-content;
+        border-radius: 20px;
+        overflow: hidden;
+
+        
+        li + li {
+            border-top: 1px solid;
+        }
+
+        a {
+            @include block;
+            padding: 10px 40px;
+        }
+
+        &.invisible {
+            visibility: hidden;
+            opacity: 0;
+            width: 0;
+            padding: 0;
+
+            li, a {
+                opacity: 0;
+            }
+        }
+    }
+
+    .menu, .menu.invisible, .menu a, .menu a:hover {
+        transition: all 300ms ease-in-out;
+    }
+}

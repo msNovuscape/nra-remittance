@@ -1,0 +1,35 @@
+@mixin rule($prop, $attr) {
+    #{$prop}: $attr;
+}
+
+@mixin dis($attr) {
+    @include rule(display, $attr);
+}
+
+// .dis {
+//     @include dis(block);
+// }
+
+@mixin block {
+    @include dis($blk);
+}
+
+@mixin in-block {
+    @include dis($in-blk);
+}
+
+@mixin in {
+    @include dis($in);
+}
+
+@mixin flex {
+    @include dis($flex);
+}
+
+@mixin grid {
+    @include dis($grid);
+}
+
+@mixin table {
+    @include dis($table);
+}

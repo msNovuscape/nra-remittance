@@ -1,0 +1,193 @@
+@mixin var($property, $vname, $vars) {
+    #{$property}: map_get($vname, #{$vars});
+    #{$property}: var(--#{$vars});
+}
+
+body {
+    @extend .text-text;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @extend .text-primary;
+}
+
+.bg {
+
+    &-primary {
+        @include var(background-color, $theme, clr__primary);
+    }
+
+    &-secondary {
+        @include var(background-color, $theme, clr__secondary);
+    }
+
+    &-third {
+        @include var(background-color, $theme, clr__third);
+    }
+
+    &-accent {
+        @include var(background-color, $theme, clr__accent);
+    }
+
+    &-white {
+        @include var(background-color, $theme, clr__white);
+    }
+
+    &-light-grey {
+        @include var(background-color, $theme, clr__light-grey);
+    }
+}
+
+.text {
+    &-primary {
+        @include var(color, $theme, clr__primary);
+    }
+    &-secondary {
+        @include var(color, $theme, clr__secondary);
+    }
+    &-third {
+        @include var(color, $theme, clr__third);
+    }
+    &-accent {
+        @include var(color, $theme, clr__accent);
+    }
+    &-white {
+        @include var(color, $theme, clr__white);
+    }
+    &-black {
+        @include var(color, $theme, clr__black);
+    }
+    &-text {
+        @include var(color, $theme, clr__text);
+    }
+}
+
+.slick-dots li button:before, .slick-dots li.slick-active button:before {
+    @extend .text-white;
+}
+
+.header {
+    box-shadow: 0px 3px 6px rgba(#000, 0.14);
+    .logo {
+        @extend .text-primary;
+    }
+    .menu {
+        @extend .bg-secondary;
+
+        a {
+            @extend .text-white;
+
+            &:hover {
+                @extend .bg-third;
+            }
+        }
+
+        li + li {
+            border-color: rgba(#fff, 0.15);
+        }
+    }
+}
+
+.table-data {
+    &-content {
+        h2, table {
+            @extend .text-white;
+        }
+    }
+
+    .table {
+        th {
+            @include var(border-color, $theme, clr__white);
+        }
+    }
+
+    .table-hover {
+        tbody {
+            tr:hover {
+                @extend .bg-third;
+            }
+        }
+    }
+}
+
+.article {
+    .container {
+
+        &:before {
+            @extend .bg-accent;
+        }
+
+        &:after {
+            @extend .bg-third;
+        }
+    }
+}
+
+.card {
+    &--img-cover {
+        h3, p, .card__meta-date {
+            @extend .text-white;
+        }
+    }
+
+    &--news-list {
+        & + * {
+            margin-top: 20px;
+        }
+
+
+    }
+}
+
+.subscribe {
+    @extend .bg-light-grey;
+    .container {
+        @extend .bg-secondary;
+
+        .bg-third {
+            margin-right: -30px;
+        }
+    }
+}
+
+.btn {
+    &-primary {
+        @extend .bg-primary, .text-white;
+    }
+    &-secondary {
+        @extend .bg-secondary, .text-white;
+    }
+    &-third {
+        @extend .bg-third, .text-white;
+    }
+    &-accent {
+        @extend .bg-accent, .text-white;
+    }
+    &-white {
+        @extend .bg-white, .text-primary;
+    }
+
+    &-outline {
+        background-color: transparent !important;
+
+        &.btn-primary {
+            @extend .text-primary;
+        }
+
+        &.btn-secondary {
+            @extend .text-secondary;
+        }
+
+        &.btn-third {
+            @extend .text-third;
+        }
+
+        &.btn-accent {
+            @extend .text-accent;
+        }
+
+        &.btn-white {
+            @extend .text-white;
+        }
+    }
+}

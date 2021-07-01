@@ -1,0 +1,53 @@
+@mixin card($gap, $shadow, $align, $grid:null, $gutter:null) {
+    padding: $gap;
+    box-shadow: $shadow;
+    text-align: $align;
+    
+    @if($grid != null) {
+        @include flex;
+        @include flex-flow-row;
+        @include flex-items-center;
+        @include flex-content-between;
+        margin: 0 -#{$gutter};
+
+        @if($grid == 2) {
+            & > * {
+                @include flex-basis(50%);
+                padding: 0 $gutter;
+            }
+        }
+
+        @if($grid == 3) {
+            & > * {
+                @include flex-basis(33.3337%);
+                padding: 0 $gutter;
+            }
+        }
+
+        @if($grid == 4) {
+            & > * {
+                @include flex-basis(25%);
+                padding: 0 $gap;
+            }
+        }
+    }
+}
+
+@mixin card-list($gap, $shadow, $radius, $item, $content) {
+    padding: $gap;
+    box-shadow: $shadow;
+    border-radius: $radius;
+    @include flex;
+    @include flex-flow-row;
+    @include flex-align(items, $item);
+    @include flex-align(content, $content);
+
+    figure, &__img {
+        @include flex-basis(40%);
+    }
+
+    article, &__body {
+        @include flex-basis(60%);
+        padding-left: 10px;
+    }
+}

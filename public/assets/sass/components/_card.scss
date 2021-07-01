@@ -1,0 +1,53 @@
+.card {
+    margin-bottom: 20px;
+    &__meta {
+        &-date, &-designation {
+            font-size: 14px;
+        }
+    }
+    &--img-cover {
+        article.pos-abs {
+            bottom: 0;
+            left: 0;
+            padding: 20px;
+            width: 100%;
+            height: auto;
+        }
+        figure.pos-rel, img {
+            width: 100%;
+            height: 100%;
+        }
+        img {
+            object-fit: cover;
+        }
+    }
+    &--news-list {
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 6px rgba(#000, 0.14);
+    }
+
+    &--team {
+        border-radius: 15px;
+        overflow: hidden;
+        margin-bottom: 40px;
+        
+        img {
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .card__img {
+            margin-bottom: 10px;
+            @extend .bg-white;
+        }
+        
+        .card__body {
+            @extend .bg-light-grey;
+            border-radius: 20px 20px 0 0;
+            padding: 20px;
+            padding-top: 50px;
+            margin-top: -40px;
+        }
+    }
+}

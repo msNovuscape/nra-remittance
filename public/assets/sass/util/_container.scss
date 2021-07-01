@@ -1,0 +1,37 @@
+.container {
+    max-width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+
+    @include mq(mobile, map($mq, lg)) {
+        max-width: map($mq, lg);
+    }
+}
+
+.max-w-40 {
+    max-width: 40%;
+}
+
+.section-padding-50 {
+    padding: 50px 0;
+}
+
+.article-wrapper {
+    overflow: hidden;
+    border-radius: 20px;
+    article {
+        padding: 20px;
+
+        @include mq(mobile, map($mq, lg)) {
+            padding: 30px;
+        }
+    }
+}
+
+.pa-20 {
+    padding: 20px;
+}
+
+.circle {
+    border-radius: 100%;
+}

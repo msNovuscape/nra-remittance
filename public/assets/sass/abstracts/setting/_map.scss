@@ -1,0 +1,3 @@
+@function map($n, $key) {
+    @return map-get($n, $key);
+}

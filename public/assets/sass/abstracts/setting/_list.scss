@@ -1,0 +1,55 @@
+@mixin list-reset {
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+}
+
+@mixin list-horizontal($cnt) {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    @include flex;
+    @include flex-flow-row;
+    @include flex-items-center;
+    @include flex-align(content, $cnt);
+}
+
+@mixin list-vertical($style, $item, $cnt) {
+    padding: 30px;
+    margin: 0;
+    list-style: $style;
+    @include flex;
+    @include flex-flow-row;
+    @include flex-align(items, $item);
+    @include flex-align(content, $cnt);
+
+    & > * + * {
+        margin-top: 10px;
+    }
+}
+
+@mixin list-2-col($gap) {
+    @include flex;
+    @include flex-flow-row;
+    @include flex-items-center;
+    @include flex-content-between;
+    margin: 0 -#{$gap};
+
+    & > * {
+        @include flex-basis(50%);
+        padding: 0 $gap;
+    }
+}
+
+@mixin list-3-col($gap) {
+    @include flex;
+    @include flex-flow-row;
+    @include flex-items-center;
+    @include flex-content-between;
+    margin: 0 -#{$gap};
+
+    & > * {
+        @include flex-basis(33.3334%);
+        padding: 0 $gap;
+    }
+}

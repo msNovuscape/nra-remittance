@@ -1,0 +1,23 @@
+@mixin mq($type, $query1, $query2:null) {
+    @if $type == 'mobile' {
+        @media screen and (map($mq, min): $query1) {
+            @content;
+        }
+    }
+    @if $type == 'desktop' {
+        @media screen and (map($mq, max): $query1) {
+            @content;
+        }
+    }
+    @if $type == 'both' {
+        @media screen and (map($mq, min): $query1) and (map($mq, max): $query2) {
+            @content;
+        }
+    }
+}
+
+// @include mq(mobile, map($mq, md)) {
+//     .header {
+//         background-color: #000;
+//     }
+// }

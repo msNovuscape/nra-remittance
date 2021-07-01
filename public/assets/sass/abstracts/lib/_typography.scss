@@ -1,0 +1,35 @@
+$typi: (
+    f__roboto: #{'Roboto', sans-serif},
+    f__montserat: #{'Montserat', sans-serif},
+    
+    f-sz__title: 48px,
+    f-sz__sub-title: 24px,
+    f-sz__sm: 14px,
+    f-sz__xs: 12px,
+    f-sz__md: 18px,
+    f-sz__def: 16px,
+    f-sz__heading: 32px,
+    f-sz__card-lg: 28px,
+    
+    f-w__thin: 300,
+    f-w__regular: 400,
+    f-w__medium: 500,
+    f-w__sem-bold: 600,
+    f-w__bold: 700,
+    
+    f-st__i: italic,
+    f-st__ob: oblique,
+    f-st__n: none,
+    
+    text__left: left,
+    text__right: right,
+    text__center: center,
+    text__justify: justify,
+    text__up: uppercase,
+    text__low: lowercase,
+    text__cap: capitalize,
+    text__un: underline,
+    text__dot: dotted,
+    text__dash: dashed,
+    text__double: double,
+);

@@ -1,0 +1,16 @@
+.btn {
+    padding: $btn__sm;
+    border-radius: 5px;
+    border: 1px solid;
+    @include in-block;
+    text-decoration: none;
+
+    @include mq(mobile, map($mq, md)) {
+        padding: $btn__md;
+    }
+
+    &-outline {
+        border: 1px solid;
+    }
+
+}

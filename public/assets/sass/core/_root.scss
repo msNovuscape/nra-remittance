@@ -1,0 +1,9 @@
+:root {
+    @each $map, $key in $theme {
+        --#{$map}: #{$key};
+    }
+
+    @each $map, $key in $typi {
+        --#{$map}: #{$key};
+    }   
+}

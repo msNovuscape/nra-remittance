@@ -1,0 +1,12 @@
+.list {
+    &-horizontal {
+        list-style: none;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+
+        li + li {
+            margin-left: 10px;
+        }
+    }
+}

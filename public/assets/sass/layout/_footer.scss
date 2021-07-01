@@ -1,0 +1,40 @@
+.footer {
+    &__bottom {
+        margin-top: 25px;
+        padding: 25px 0;
+        ul {
+            justify-content: center;
+
+        }
+    }
+    .address-wrapper {
+        p + p {
+            margin-top: 10px;
+        }
+
+        .fa {
+            margin-right: 10px;
+        }
+    }
+
+    .logo-wrapper {
+        font-size: 2rem;
+    }
+    li, a, p, span, h3, div {
+        @extend .text-primary;
+    }
+
+    .container {
+        position: relative;
+        z-index: 3;
+    }
+
+    &-overlay {
+        width: 95%;
+        height: 90%;
+        top: 0;
+        right: 0;
+        @extend .bg-white;
+        z-index: 1;
+    }
+}
