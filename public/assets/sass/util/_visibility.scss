@@ -1,0 +1,16 @@
+.invisible {    
+    visibility: hidden;
+    opacity: 0;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+@include mq(mobile, map($mq, lg)) {
+    .md-visible {
+        visibility: visible;
+        opacity: 1;
+    }
+}

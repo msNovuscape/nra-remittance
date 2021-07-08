@@ -82,8 +82,16 @@ h1, h2, h3, h4, h5, h6 {
             }
         }
 
+        li.active a {
+            @extend .bg-third;
+        }
+
         li + li {
             border-color: rgba(#fff, 0.15);
+        }
+
+        @include mq(mobile, map($mq, md)) {
+            background-color: transparent;
         }
     }
 }
@@ -188,6 +196,14 @@ h1, h2, h3, h4, h5, h6 {
 
         &.btn-white {
             @extend .text-white;
+        }
+    }
+}
+
+.hero-banner-slider {
+    .slick-next, .slick-prev {
+        &:before {
+            color: var(--clr__white) !important;
         }
     }
 }

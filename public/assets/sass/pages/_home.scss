@@ -3,11 +3,37 @@
         padding: 20px;
 
         h2 {
-            margin-bottom: 1.1rem;
+            margin-bottom: 10px;
         }
+
+        p {
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--clr__white);
+            font-size: 14px;
+        }
+
+        select {
+            padding: 0 15px;
+            height: 35px;
+            width: 150px;
+            border-radius: 5px;
+        }
+
 
         @include mq(mobile, map($mq, lg)) {
             padding: 20px 30px;
+            article.flex {
+                margin-bottom: 30px;
+                h2 {
+                    margin-bottom: 0;
+                    flex: 1;
+                    padding-right: 15px;
+                }
+                h2 + * {
+                    margin-top: 0;
+                }
+            }
         }
     }
 
@@ -28,6 +54,14 @@
         padding: 10px;
         box-shadow: 0 0 6px rgba(#000, 0.09);
         border-radius: 20px;
+
+        p + * {
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding: 6px 20px;
+        }
     }
 }
 

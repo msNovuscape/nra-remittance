@@ -35,3 +35,22 @@
 .circle {
     border-radius: 100%;
 }
+
+.pos-rel {
+    position: relative;
+}
+
+@include mq(mobile, map($mq, lg)) {
+    .md-pos-rel {
+        position: relative !important;
+    }
+    .md-pos-static {
+        position: static !important;
+    }
+}
+
+.hide-top-before, .hide-top-before .container {
+    &:before {
+        display: none;
+    }
+}

@@ -18,24 +18,40 @@
     <div class="site-wrapper">
         <!-- header start -->
         <header class="header pos-rel z-2">
-            <div class="container">
-                <div class="grid grid-cols-2 grid-gap-30">
-                    <div class="logo-wrapper">
-                        <div class="logo text-left">Nepal Rental Association</div>
+            <nav class="top-bar">
+                <div class="container">
+                    <div class="grid grid-cols-2 gird-gap-30">
+                        <div class="logo-wrapper">
+                            <div class="logo text-left">Nepal Rental Association</div>
+                        </div>
+                        
+                        <ul class="list-reset list-horizontal">
+                            <li><a href="/committee">Committee</a></li>
+                            <li><a href="/central_bank_message">Message From Central Bank</a></li>
+                            <li><a href="/remmitance_overview">Remittance Overview in Nepal</a></li>
+                        </ul>
                     </div>
+                </div>
+            </nav>
+            <nav class="navbar bg-primary">
+                <div class="container">
                     <div class="menu-wrapper text-right pos-rel">
                         <button class="menu-trigger-btn">
                             <i class="fa fa-bars"></i>
                         </button>
-                        <ul class="menu invisible pos-abs">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Teams</a></li>
-                            <li><a href="#">Contact</a></li>
+                        <ul class="menu invisible list-reset md-list-horizontal pos-abs md-visible md-pos-static">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="/gallery">Gallery</a></li>
+                            <li><a href="/acts_and_regulations">Acts & Regulations</a></li>
+                            <li><a href="/news_and_update">News & Update</a></li>
+                            <li><a href="/team">Members</a></li>
+                            <li><a href="/committee">Committee</a></li>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/contact">Contact</a></li>
                         </ul>
                     </div>
                 </div>
-            </div>
+            </nav>
         </header>
         <!-- header end -->
         <!-- Banner start -->
@@ -77,6 +93,7 @@
                         <article class="card__body card--feature__body">
                             <h3>Lorem ipsum dolor sit.</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati?</p>
+                            <a href="#" class="btn btn-primary rounded">Read More</a>
                         </article>
                     </div>
                     <div class="card card--feature">
@@ -86,6 +103,7 @@
                         <article class="card__body card--feature__body">
                             <h3>Lorem ipsum dolor sit.</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati?</p>
+                            <a href="#" class="btn btn-primary rounded">Read More</a>
                         </article>
                     </div>
                     <div class="card card--feature">
@@ -95,6 +113,7 @@
                         <article class="card__body card--feature__body">
                             <h3>Lorem ipsum dolor sit.</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati?</p>
+                            <a href="#" class="btn btn-primary rounded">Read More</a>
                         </article>
                     </div>
                     <div class="card card--feature">
@@ -104,6 +123,7 @@
                         <article class="card__body card--feature__body">
                             <h3>Lorem ipsum dolor sit.</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati?</p>
+                            <a href="#" class="btn btn-primary rounded">Read More</a>
                         </article>
                     </div>
                     <div class="card card--feature">
@@ -113,6 +133,7 @@
                         <article class="card__body card--feature__body">
                             <h3>Lorem ipsum dolor sit.</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati?</p>
+                            <a href="#" class="btn btn-primary rounded">Read More</a>
                         </article>
                     </div>
                 </div>
@@ -174,6 +195,7 @@
                     <div class="table-data-content bg-secondary">
                         <article>
                             <h2>Lorem ipsum dolor sit amet.</h2>
+                            <p><span class="section-date">June-21-2021</span></p>
                         </article>
                         <div class="table-responsive">
                             <table class="table bg-secondary th-border table-hover">
@@ -215,8 +237,14 @@
                         </div>
                     </div>
                     <div class="table-data-content bg-secondary">
-                        <article>
+                        <article class="flex flex-wrap flex-col md-flex-row flex-items-center flex-content-between">
                             <h2>Lorem ipsum dolor sit amet.</h2>
+                            <form action="">
+                                <select class="" name="" id="">
+                                    <option value="">Select Date</option>
+                                    <option value="1">June-21-2021</option>
+                                </select>
+                            </form>
                         </article>
                         <div class="table-responsive">
                             <table class="table bg-secondary table-hover">
@@ -277,10 +305,11 @@
                             <h3>Lorem ipsum dolor sit.</h3>
                             <div class="card__meta-date">June-21-2021</div>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, iusto.</p>
+                            <a href="#" class="btn btn-white rounded">Read More</a>
                         </article>
                     </div>
                     <div class="news-list grid-span-2">
-                        <div class="card card--news-list flex flex-cols-1-3 flex-items-center">
+                        <div class="card card--news-list flex flex-cols-1-3">
                             <figure>
                                 <img src="https://cdn.pixabay.com/photo/2021/06/13/07/33/mountain-pass-6332476_960_720.jpg" alt="">
                             </figure>
@@ -288,9 +317,10 @@
                                 <h3>Lorem ipsum dolor sit.</h3>
                                 <div class="card__meta-date">June-21-2021</div>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, iusto.</p>
+                                <a href="#" class="btn btn-primary rounded">Read More</a>
                             </article>
                         </div>
-                        <div class="card card--news-list flex flex-cols-1-3 flex-items-center">
+                        <div class="card card--news-list flex flex-cols-1-3">
                             <figure>
                                 <img src="https://cdn.pixabay.com/photo/2021/06/13/07/33/mountain-pass-6332476_960_720.jpg" alt="">
                             </figure>
@@ -298,9 +328,10 @@
                                 <h3>Lorem ipsum dolor sit.</h3>
                                 <div class="card__meta-date">June-21-2021</div>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, iusto.</p>
+                                <a href="#" class="btn btn-primary rounded">Read More</a>
                             </article>
                         </div>
-                        <div class="card card--news-list flex flex-cols-1-3 flex-items-center">
+                        <div class="card card--news-list flex flex-cols-1-3">
                             <figure>
                                 <img src="https://cdn.pixabay.com/photo/2021/06/13/07/33/mountain-pass-6332476_960_720.jpg" alt="">
                             </figure>
@@ -308,6 +339,7 @@
                                 <h3>Lorem ipsum dolor sit.</h3>
                                 <div class="card__meta-date">June-21-2021</div>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, iusto.</p>
+                                <a href="#" class="btn btn-primary rounded">Read More</a>
                             </article>
                         </div>
                     </div>
@@ -329,7 +361,10 @@
                         </figure>
                         <article class="card__body text-center">
                             <h3>Name Here</h3>
-                            <div class="card__meta-designation">Designation</div>
+                            <div class="card__meta flex flex-content-between">
+                                <div class="card__meta-designation">Designation</div>
+                                <div class="card__meta-designation">Locate</div>
+                            </div>
                         </article>
                     </div>
                     <div class="card card--team">
@@ -338,7 +373,10 @@
                         </figure>
                         <article class="card__body text-center">
                             <h3>Name Here</h3>
-                            <div class="card__meta-designation">Designation</div>
+                            <div class="card__meta flex flex-content-between">
+                                <div class="card__meta-designation">Designation</div>
+                                <div class="card__meta-designation">Locate</div>
+                            </div>
                         </article>
                     </div>
                     <div class="card card--team">
@@ -347,7 +385,10 @@
                         </figure>
                         <article class="card__body text-center">
                             <h3>Name Here</h3>
-                            <div class="card__meta-designation">Designation</div>
+                            <div class="card__meta flex flex-content-between">
+                                <div class="card__meta-designation">Designation</div>
+                                <div class="card__meta-designation">Locate</div>
+                            </div>
                         </article>
                     </div>
                 </div>

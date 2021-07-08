@@ -1,5 +1,4 @@
 .header {
-    padding: 20px 0;
     margin-bottom: 1.5rem;
 
     .menu-trigger-btn {
@@ -7,10 +6,27 @@
         @extend .bg-third, .text-white;
         border: none;
         border-radius: 5px;
+
+        @include mq(mobile, map($mq, lg)) {
+            display: none;
+        }
     }
 
     .logo {
-        font-size: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .top-bar {
+        padding: 10px 0;
+
+        li + li {
+            padding-left: 20px;
+        }
+        a {
+            text-decoration: none;
+            @extend .text-primary;
+            display: inline-block;
+        }
     }
 
     .menu {
@@ -27,25 +43,39 @@
         width: max-content;
         border-radius: 20px;
         overflow: hidden;
-
+        
         
         li + li {
             border-top: 1px solid;
         }
-
+        
         a {
             @include block;
             padding: 10px 40px;
         }
-
+        
         &.invisible {
-            visibility: hidden;
-            opacity: 0;
             width: 0;
             padding: 0;
-
+            
             li, a {
                 opacity: 0;
+            }
+        }
+        
+        @include mq(mobile, map($mq, lg)) {
+            &.md-visible {
+                width: auto;
+                border-radius: 0px;
+                max-width: 100%;
+                
+                a {
+                    padding: 10px 15px;
+                }
+
+                li, a {
+                    opacity: 1;
+                }
             }
         }
     }

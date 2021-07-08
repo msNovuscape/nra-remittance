@@ -9,4 +9,46 @@
             margin-left: 10px;
         }
     }
+
+    &-bullet {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+        
+        li + li {
+            margin-top: 10px;
+        }
+
+        li {
+            position: relative;
+            padding-left: 40px;
+
+            &:before {
+                content: '\f069';
+                font-family: fontawesome;
+                position: absolute;
+                top: 0;
+                left: -10px;
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                background-color: lighten(#4c597b, 20%);
+            }
+        }
+    }
+}
+
+.md {
+    &-list {
+        &-horizontal {
+            @include mq(mobile, map($mq, md)) {
+                display: flex;
+                list-style: none;
+                flex-wrap: wrap;
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+    }
 }

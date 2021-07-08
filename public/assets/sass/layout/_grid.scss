@@ -25,3 +25,6 @@
 .grid-span-2 {
     grid-column: span 2;
 }
+.grid-cols-1-2 {
+    grid-template-columns: 1fr 2fr;
+}

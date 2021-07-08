@@ -28,10 +28,10 @@
                             <i class="fa fa-bars"></i>
                         </button>
                         <ul class="menu invisible pos-abs">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Teams</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/team">Teams</a></li>
+                            <li><a href="/comtact">Contact</a></li>
                         </ul>
                     </div>
                 </div>

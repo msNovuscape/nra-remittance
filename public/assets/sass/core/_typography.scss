@@ -22,3 +22,11 @@ h3 {
         }
     }
 }
+
+.hero-banner-slider {
+    .slick-next, .slick-prev {
+        &:before {
+            font-size: 30px;
+        }
+    }
+}
