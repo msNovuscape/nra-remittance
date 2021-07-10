@@ -47,7 +47,7 @@
     -->
       <div class="logo">
         
-        <a href="http://nra.org.np/" target="_blank" class="simple-text logo-normal">
+        <a href="{{route('welcome.index')}}" target="_blank" class="simple-text logo-normal">
           Nepal Remitters Association
         </a>
       </div>
