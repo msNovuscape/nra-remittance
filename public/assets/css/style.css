@@ -857,6 +857,12 @@ h3 {
   position: relative;
 }
 
+@media screen and (max-width: 767px) {
+  .table-data .grid h2 {
+    text-align: left !important;
+  }
+}
+
 .table-data .calendar {
   padding: 8px 15px;
   background: #ffffff;
@@ -882,6 +888,12 @@ h3 {
   line-height: 43px;
   border-left: 1px solid var(--clr__primary);
   text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .table-data .icon {
+    display: none;
+  }
 }
 
 .table-data-content {

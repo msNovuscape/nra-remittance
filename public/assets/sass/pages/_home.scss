@@ -4,6 +4,13 @@
     }
     .grid {
         position: relative;
+
+        
+        @include mq(desktop, map($mq, sm)) {
+            h2 {
+                text-align: left !important;
+            }
+        }
     }
     .calendar {
         padding:8px 15px;
@@ -28,6 +35,10 @@
             line-height: 43px;
             border-left: 1px solid var(--clr__primary);
             text-align: center;
+
+            @include mq(desktop, map($mq, sm)) {
+                display: none;
+            }
         }
     &-content {
         padding: 20px;
