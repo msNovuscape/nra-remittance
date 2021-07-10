@@ -1,13 +1,13 @@
 :root {
-  --clr__primary: #2f2f2f;
+  --clr__primary: #222222;
   --clr__secondary: #505b89;
-  --clr__third: #f1711a;
+  --clr__third: #e9802d;
   --clr__accent: #4c597b;
   --clr__success: #00ff00;
   --clr__info: #0000dd;
   --clr__warning: #FFAD33;
   --clr__error: #ff0000;
-  --clr__text: #b4b4b4;
+  --clr__text: #767676;
   --clr__white: #fff;
   --clr__black: #000;
   --clr__light-grey: #f5f5f5;
@@ -103,15 +103,19 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+}
+
+.card--gallery .card__title {
+  font-size: 1rem;
 }
 
 .header .menu a {
@@ -130,6 +134,26 @@ h3 {
 .card .btn {
   margin-top: 10px;
   padding: 6px 20px;
+}
+
+.card figure {
+  overflow: hidden;
+}
+
+.card figure img {
+  display: block;
+  margin-bottom: 0;
+}
+
+.card__title {
+  display: block;
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+.card__date {
+  font-size: 14px;
+  opacity: 0.75;
 }
 
 .card__meta-date, .card__meta-designation {
@@ -165,6 +189,18 @@ h3 {
   height: 100%;
 }
 
+.card--news-list h3 {
+  font-size: 1.3rem;
+}
+
+.card--news-list h3 + * {
+  margin-top: 0px;
+}
+
+.card--news-list h3 + * + * {
+  margin-top: 5px;
+}
+
 .card--team {
   border-radius: 15px;
   overflow: hidden;
@@ -185,6 +221,130 @@ h3 {
   padding: 20px;
   padding-top: 50px;
   margin-top: -40px;
+}
+
+.card--team .card__meta-designation .text {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+.card--team .card__meta-designation {
+  text-align: left;
+  max-width: 50%;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  width: 50%;
+}
+
+.card--team h3:after {
+  content: '';
+  display: block;
+  margin: 2px auto 10px;
+  width: 20px;
+  height: 3px;
+}
+
+.card--gallery {
+  -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
+          box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card--gallery figure {
+  height: 170px;
+  overflow: hidden;
+}
+
+.card--gallery figure img {
+  display: block;
+  margin-bottom: 0;
+}
+
+.card--gallery__body {
+  padding: 10px 20px;
+}
+
+.card--gallery__body a {
+  text-decoration: none;
+}
+
+.card--gallery:hover {
+  -webkit-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.14);
+          box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.14);
+}
+
+.card--gallery:hover img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.card--gallery, .card--gallery img, .card--gallery a, .card--gallery:hover, .card--gallery:hover img, .card--gallery:hover a,
+.card--news-box img, .card--news-box a,
+.card--news-box:hover img, .card--news-box:hover a {
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.card--news-box {
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card--news-box figure {
+  max-height: 150px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card--news-box figure img {
+  height: 100%;
+}
+
+.card--news-box__body {
+  padding: 10px 15px;
+}
+
+.card--news-box__body .btn {
+  margin-top: 20px;
+}
+
+.card--news-box:hover img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.btn {
+  padding: 6px 30px;
+  position: relative;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+
+.btn .fa {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  opacity: 0;
+  visibility: hidden;
+  font-size: 0;
+}
+
+.btn:hover .fa {
+  right: -15px;
+  opacity: 1;
+  visibility: visible;
+  font-size: 25px;
+}
+
+.btn .fa, .btn:hover .fa {
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 
 .list-horizontal {
@@ -297,6 +457,44 @@ h3 {
       grid-template-columns: 1fr 2fr;
 }
 
+.grid-cols-2-1 {
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+}
+
+@media screen and (max-width: 767px) {
+  .grid, .news .grid, .news .grid.grid-cols-3 {
+    -ms-grid-columns: 1fr !important;
+        grid-template-columns: 1fr !important;
+    row-gap: 30px;
+    -webkit-column-gap: 0;
+            column-gap: 0;
+  }
+  .top-bar .grid {
+    -ms-grid-columns: 2fr 1fr !important;
+        grid-template-columns: 2fr 1fr !important;
+  }
+  .container {
+    padding: 0 15px;
+  }
+  .footer .grid {
+    padding: 0 20px;
+  }
+  .footer .container .social-list.list-horizontal {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .footer .container .social-list.list-horizontal li + li {
+    margin-top: 0;
+    margin-left: 10px;
+  }
+  .footer .container .social-list.list-horizontal .fa {
+    font-size: 24px;
+  }
+}
+
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -391,13 +589,19 @@ h3 {
   padding: 10px 0;
 }
 
-.header .top-bar li + li {
-  padding-left: 20px;
-}
-
 .header .top-bar a {
   text-decoration: none;
   display: inline-block;
+  padding: 8px 14px;
+  font-size: 15px;
+}
+
+.header .top-bar ul:first-of-type {
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  margin-left: auto;
+  margin-bottom: 1rem;
 }
 
 .header .menu {
@@ -437,9 +641,10 @@ h3 {
 
 @media screen and (min-width: 1170px) {
   .header .menu.md-visible {
-    width: auto;
+    width: 900px;
     border-radius: 0px;
-    max-width: 100%;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
   }
   .header .menu.md-visible a {
     padding: 10px 15px;
@@ -452,6 +657,96 @@ h3 {
 .header .menu, .header .menu.invisible, .header .menu a, .header .menu a:hover {
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
+}
+
+@media screen and (max-width: 1170px) {
+  .header {
+    z-index: 4 !important;
+  }
+  .header .menu-trigger-btn {
+    position: relative;
+    z-index: 5;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    margin-left: auto;
+    max-height: 40px;
+  }
+  .header .menu-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header .menu-wrapper .menu + li + li {
+    border-top: none !important;
+  }
+  .header .menu-wrapper.invisible {
+    display: none;
+  }
+  .header .menu-wrapper ul {
+    background-color: transparent !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    position: static !important;
+    margin: 0 !important;
+  }
+  .header .menu-wrapper ul:first-of-type {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .header .menu-wrapper ul.menu {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .header .menu-wrapper ul a {
+    text-align: center;
+    background-color: transparent !important;
+    font-size: 1.2rem;
+  }
+  .header .menu-wrapper ul.menu li.active a, .header .menu-wrapper ul li a:hover {
+    background-color: transparent !important;
+    color: #e9802d;
+    color: var(--clr__third);
+  }
+  .header .menu-wrapper ul li + li {
+    margin-top: 12px;
+  }
+  .header .menu-wrapper ul + ul {
+    margin-top: 20px;
+  }
+  .header .menu-wrapper ul + ul li + li {
+    border-color: transparent !important;
+  }
+}
+
+@media screen and (min-width: 1170px) {
+  .header .menu-wrapper.invisible {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 .slick img {
@@ -530,6 +825,22 @@ h3 {
   z-index: 3;
 }
 
+@media screen and (max-width: 767px) {
+  .footer .container {
+    padding: 0 15px 0 30px;
+  }
+  .footer .container .list-horizontal {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 20px;
+  }
+  .footer .container .list-horizontal li + li {
+    margin-top: 10px;
+  }
+}
+
 .footer-overlay {
   width: 95%;
   height: 90%;
@@ -538,8 +849,47 @@ h3 {
   z-index: 1;
 }
 
+.table-data .exchange-rate {
+  margin-bottom: 40px;
+}
+
+.table-data .grid {
+  position: relative;
+}
+
+.table-data .calendar {
+  padding: 8px 15px;
+  background: #ffffff;
+  border-radius: 25px;
+  font-size: 18px;
+  margin-top: 0;
+  border: 1px solid #333333;
+  -webkit-box-shadow: 0px 20px 40px rgba(59, 60, 56, 0.05);
+          box-shadow: 0px 20px 40px rgba(59, 60, 56, 0.05);
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  margin-left: 30px;
+}
+
+.table-data .icon {
+  position: absolute;
+  font-size: 20px;
+  top: 0;
+  right: 118px;
+  width: 43px;
+  height: 43px;
+  line-height: 43px;
+  border-left: 1px solid var(--clr__primary);
+  text-align: center;
+}
+
 .table-data-content {
   padding: 20px;
+}
+
+.table-data-content .section-date {
+  opacity: 0.7;
 }
 
 .table-data-content h2 {
@@ -587,15 +937,32 @@ h3 {
   border: 1px solid;
 }
 
+.table-data .table.th-border th, .table-data .table.th-bg-third th {
+  padding: 6px 14px;
+}
+
 .feature img {
   max-width: 80px;
 }
 
 .feature .card--feature {
-  padding: 10px;
-  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.09);
-          box-shadow: 0 0 6px rgba(0, 0, 0, 0.09);
-  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: wrap;
+      -ms-flex: wrap;
+          flex: wrap;
+  height: 100%;
+}
+
+.feature .card--feature h3 {
+  padding-right: 10px;
+  font-size: 1.5rem;
+  line-height: 1.2;
 }
 
 .feature .card--feature p + * {
@@ -603,7 +970,22 @@ h3 {
 }
 
 .feature .card--feature .btn {
-  padding: 6px 20px;
+  -webkit-margin-before: auto;
+          margin-block-start: auto;
+}
+
+.feature .card--feature.feature-first-card h3 + p {
+  font-size: 1.2rem;
+  line-height: 1.2;
+  font-weight: 300;
+}
+
+.dash-line {
+  display: inline-block;
+  vertical-align: middle;
+  width: 10px;
+  height: 2px;
+  margin-right: 10px;
 }
 
 .article .container {
@@ -659,7 +1041,7 @@ h3 {
   border-radius: 20px;
 }
 
-.subscribe .container .grid .bg-third, .subscribe .container .grid .header .menu-trigger-btn, .header .subscribe .container .grid .menu-trigger-btn, .subscribe .container .grid .header .menu a:hover, .header .menu .subscribe .container .grid a:hover, .subscribe .container .grid .header .menu li.active a, .header .menu li.active .subscribe .container .grid a, .subscribe .container .grid .table-data .table-hover tbody tr:hover, .table-data .table-hover tbody .subscribe .container .grid tr:hover, .subscribe .container .grid .article .container:after, .article .subscribe .container .grid .container:after, .subscribe .container .grid .btn-third {
+.subscribe .container .grid .bg-third, .subscribe .container .grid .card--team h3:after, .card--team .subscribe .container .grid h3:after, .subscribe .container .grid .header .menu-trigger-btn, .header .subscribe .container .grid .menu-trigger-btn, .subscribe .container .grid .header .top-bar ul:first-of-type li.active > a, .header .top-bar ul:first-of-type .subscribe .container .grid li.active > a, .subscribe .container .grid .header .top-bar ul:first-of-type li a:hover, .header .top-bar ul:first-of-type li .subscribe .container .grid a:hover, .subscribe .container .grid .ui-datepicker-header, .subscribe .container .grid .ui-state-default:hover, .subscribe .container .grid .ui-state-highlight, .subscribe .container .grid .ui-state-active, .subscribe .container .grid .header .menu a:hover, .header .menu .subscribe .container .grid a:hover, .subscribe .container .grid .header .menu li.active a, .header .menu li.active .subscribe .container .grid a, .subscribe .container .grid .table-data .table.th-bg-third th, .table-data .table.th-bg-third .subscribe .container .grid th, .subscribe .container .grid .table-data .table-hover tbody tr:hover, .table-data .table-hover tbody .subscribe .container .grid tr:hover, .subscribe .container .grid .article .container:after, .article .subscribe .container .grid .container:after, .subscribe .container .grid .card--gallery:hover, .subscribe .container .grid .btn-third {
   -webkit-transform: skewX(-20deg);
           transform: skewX(-20deg);
 }
@@ -667,6 +1049,116 @@ h3 {
 .subscribe .container .grid .btn {
   -webkit-transform: skewX(20deg);
           transform: skewX(20deg);
+}
+
+.ui-datepicker {
+  background: #ffffff;
+  border-radius: 15px;
+}
+
+.ui-datepicker-header {
+  height: 50px;
+  line-height: 50px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.ui-datepicker-prev,
+.ui-datepicker-next {
+  width: 20px;
+  height: 20px;
+  text-indent: 9999px;
+  border-radius: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.ui-datepicker-prev {
+  float: left;
+  margin-left: 12px;
+}
+
+.ui-datepicker-prev:after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  margin: -43px 0px 0px 8px;
+}
+
+.ui-datepicker-next {
+  float: right;
+  margin-right: 12px;
+}
+
+.ui-datepicker-next:after {
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+  margin: -43px 0px 0px 6px;
+}
+
+.ui-datepicker-prev:after,
+.ui-datepicker-next:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+.ui-datepicker-prev:hover,
+.ui-datepicker-next:hover,
+.ui-datepicker-prev:hover:after,
+.ui-datepicker-next:hover:after {
+  border-color: #333333;
+}
+
+.ui-datepicker-title {
+  text-align: center;
+  font-size: 25px;
+}
+
+.ui-datepicker-calendar {
+  width: 100%;
+  text-align: center;
+}
+
+.ui-datepicker-calendar thead tr th span {
+  display: block;
+  width: 40px;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.ui-state-default {
+  display: block;
+  text-decoration: none;
+  color: #333333;
+  line-height: 40px;
+  font-size: 16px;
+}
+
+.ui-state-default:hover {
+  color: #ffffff;
+  border-radius: 50px;
+  -webkit-transition: all 0.25s cubic-bezier(0.7, -0.12, 0.2, 1.12);
+  transition: all 0.25s cubic-bezier(0.7, -0.12, 0.2, 1.12);
+}
+
+.ui-state-highlight {
+  color: #ffffff;
+  border-radius: 50px;
+}
+
+.ui-state-active {
+  color: #ffffff;
+  border-radius: 50px;
+}
+
+.ui-datepicker-unselectable .ui-state-default {
+  color: #eee;
+  border: 2px solid transparent;
 }
 
 .about-info .container:before, .about-info .container:after {
@@ -688,6 +1180,12 @@ h3 {
 
 .about-info .grid ul li:before {
   left: -30px;
+}
+
+@media screen and (max-width: 767px) {
+  .about-info .grid ul li:before {
+    left: -20px;
+  }
 }
 
 .about-info .grid ul li + li {
@@ -741,6 +1239,90 @@ h3 {
   fill: var(--clr__white);
 }
 
+h1 + * {
+  margin-top: 40px;
+}
+
+figure + .innerpage-article-content {
+  margin-top: 20px;
+}
+
+.innerpage-article-content {
+  max-width: 900px;
+}
+
+.contact-page h1 + * {
+  margin-top: 10px;
+}
+
+.contact-page .info-box {
+  margin-top: 30px;
+}
+
+.contact-page .info-box .fa {
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.contact-page .info-box div h4 + * {
+  margin-top: 2px;
+}
+
+.contact-page .info-box + .info-box {
+  margin-top: 20px;
+}
+
+.contact-page .btn {
+  padding: 10px 30px;
+  background-color: transparent;
+  font-size: 1.4;
+}
+
+.contact-page .form-wrapper {
+  border-radius: 5px;
+  padding: 30px 45px;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.14);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.14);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, var(--clr__accent)), to(var(--clr__secondary)));
+  background-image: linear-gradient(90deg, var(--clr__accent) 50%, var(--clr__secondary));
+}
+
+.contact-page .form-wrapper .btn {
+  border-color: #fff;
+  border-color: var(--clr__white);
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .contact-page .form-wrapper {
+    padding: 20px;
+  }
+}
+
+.form-group + * {
+  margin-top: 20px;
+}
+
+.form-group input[type="text"], .form-group input[type="email"], .form-group input[type="number"], .form-group input[type="combobox"],
+.form-group select, .form-group textarea {
+  width: 100%;
+  display: block;
+  padding: 0 15px;
+  line-height: 40px;
+  border-radius: 5px;
+}
+
+.form-group input[type="text"]:focus, .form-group input[type="email"]:focus, .form-group input[type="number"]:focus, .form-group input[type="combobox"]:focus,
+.form-group select:focus, .form-group textarea:focus {
+  border-color: var(--clr__third);
+  outline: none;
+}
+
+.form-group input[type="text"], .form-group input[type="email"], .form-group input[type="number"], .form-group input[type="combobox"],
+.form-group select {
+  height: 40px;
+}
+
 .text-left, .header .menu {
   text-align: left;
 }
@@ -755,6 +1337,10 @@ h3 {
 
 .text-justify {
   text-align: justify;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
 }
 
 .pos-rel {
@@ -801,7 +1387,7 @@ h3 {
   max-width: 40%;
 }
 
-.section-padding-50 {
+.section-padding-50, .innerpage + .subscribe {
   padding: 50px 0;
 }
 
@@ -845,18 +1431,22 @@ h3 {
   display: none;
 }
 
+.pill {
+  border-radius: 25px;
+}
+
 .bg-primary, .btn-primary {
-  background-color: #2f2f2f;
+  background-color: #222222;
   background-color: var(--clr__primary);
 }
 
-.bg-secondary, .header .menu, .subscribe .container, .btn-secondary {
+.bg-secondary, .subscribe .container, .btn-secondary {
   background-color: #505b89;
   background-color: var(--clr__secondary);
 }
 
-.bg-third, .header .menu-trigger-btn, .header .menu a:hover, .header .menu li.active a, .table-data .table-hover tbody tr:hover, .article .container:after, .btn-third {
-  background-color: #f1711a;
+.bg-third, .card--team h3:after, .header .menu-trigger-btn, .header .top-bar ul:first-of-type li.active > a, .header .top-bar ul:first-of-type li a:hover, .ui-datepicker-header, .ui-state-default:hover, .ui-state-highlight, .ui-state-active, .header .menu a:hover, .header .menu li.active a, .table-data .table.th-bg-third th, .table-data .table-hover tbody tr:hover, .article .container:after, .card--gallery:hover, .btn-third {
+  background-color: #e9802d;
   background-color: var(--clr__third);
 }
 
@@ -870,13 +1460,13 @@ h3 {
   background-color: var(--clr__white);
 }
 
-.bg-light-grey, .card--team .card__body, .subscribe {
+.bg-light-grey, .card--team .card__body, .innerpage + .subscribe {
   background-color: #f5f5f5;
   background-color: var(--clr__light-grey);
 }
 
-.text-primary, .header .top-bar a, .footer li, .footer a, .footer p, .footer span, .footer h3, .footer div, h1, h2, h3, h4, h5, h6, .header .logo, .btn-white, .btn-outline.btn-primary {
-  color: #2f2f2f;
+.text-primary, .card__title, .footer li, .footer a, .footer p, .footer span, .footer h3, .footer div, h1, h2, h3, h4, h5, h6, .header .logo, .btn-white, .btn-outline.btn-primary {
+  color: #222222;
   color: var(--clr__primary);
 }
 
@@ -885,8 +1475,8 @@ h3 {
   color: var(--clr__secondary);
 }
 
-.text-third, .btn-outline.btn-third {
-  color: #f1711a;
+.text-third, .table-data .icon, .ui-datepicker-calendar thead tr th span, .contact-page .info-box .fa, .table-data .table tbody > tr > td:first-of-type, .btn-outline-third {
+  color: #e9802d;
   color: var(--clr__third);
 }
 
@@ -895,7 +1485,7 @@ h3 {
   color: var(--clr__accent);
 }
 
-.text-white, .header .menu-trigger-btn, .mission-vision-article .heading-horizontal h2, .slick-dots li button:before, .slick-dots li.slick-active button:before, .header .menu a, .table-data-content h2, .table-data-content table, .card--img-cover h3, .card--img-cover p, .card--img-cover .card__meta-date, .btn-primary, .btn-secondary, .btn-third, .btn-accent, .btn-outline.btn-white {
+.text-white, .header .menu-trigger-btn, .mission-vision-article .heading-horizontal h2, .contact-page .form-wrapper h2, .contact-page .form-wrapper p, .contact-page .form-wrapper .btn, .slick-dots li button:before, .slick-dots li.slick-active button:before, .header .menu a, .header .top-bar ul.bg-primary a, .header .top-bar ul.btn-primary a, .table-data-content h2, .table-data-content table, .card--img-cover h3, .card--img-cover p, .card--img-cover .card__meta-date, .card--gallery:hover .card__title, .btn-primary, .btn-secondary, .btn-third, .btn-accent, .btn-outline.btn-white {
   color: #fff;
   color: var(--clr__white);
 }
@@ -905,24 +1495,22 @@ h3 {
   color: var(--clr__black);
 }
 
-.text-text, body {
-  color: #b4b4b4;
+.text-text, body, .card--gallery .card__title {
+  color: #767676;
   color: var(--clr__text);
 }
 
 .header {
-  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.14);
-          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.14);
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.04);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.04);
 }
 
 .header .menu li + li {
   border-color: rgba(255, 255, 255, 0.15);
 }
 
-@media screen and (min-width: 992px) {
-  .header .menu {
-    background-color: transparent;
-  }
+.table-data .table {
+  text-align: center;
 }
 
 .table-data .table th {
@@ -934,12 +1522,18 @@ h3 {
   margin-top: 20px;
 }
 
-.subscribe .container .bg-third, .subscribe .container .header .menu-trigger-btn, .header .subscribe .container .menu-trigger-btn, .subscribe .container .header .menu a:hover, .header .menu .subscribe .container a:hover, .subscribe .container .header .menu li.active a, .header .menu li.active .subscribe .container a, .subscribe .container .table-data .table-hover tbody tr:hover, .table-data .table-hover tbody .subscribe .container tr:hover, .subscribe .container .article .container:after, .article .subscribe .container .container:after, .subscribe .container .btn-third {
+.subscribe .container .bg-third, .subscribe .container .card--team h3:after, .card--team .subscribe .container h3:after, .subscribe .container .header .menu-trigger-btn, .header .subscribe .container .menu-trigger-btn, .subscribe .container .header .top-bar ul:first-of-type li.active > a, .header .top-bar ul:first-of-type .subscribe .container li.active > a, .subscribe .container .header .top-bar ul:first-of-type li a:hover, .header .top-bar ul:first-of-type li .subscribe .container a:hover, .subscribe .container .ui-datepicker-header, .subscribe .container .ui-state-default:hover, .subscribe .container .ui-state-highlight, .subscribe .container .ui-state-active, .subscribe .container .header .menu a:hover, .header .menu .subscribe .container a:hover, .subscribe .container .header .menu li.active a, .header .menu li.active .subscribe .container a, .subscribe .container .table-data .table.th-bg-third th, .table-data .table.th-bg-third .subscribe .container th, .subscribe .container .table-data .table-hover tbody tr:hover, .table-data .table-hover tbody .subscribe .container tr:hover, .subscribe .container .article .container:after, .article .subscribe .container .container:after, .subscribe .container .card--gallery:hover, .subscribe .container .btn-third {
   margin-right: -30px;
 }
 
 .btn-outline {
   background-color: transparent !important;
+}
+
+.btn-outline-third {
+  border: 1px solid;
+  border-color: #e9802d;
+  border-color: var(--clr__third);
 }
 
 .hero-banner-slider .slick-next:before, .hero-banner-slider .slick-prev:before {

@@ -18,14 +18,20 @@
 
     .top-bar {
         padding: 10px 0;
-
-        li + li {
-            padding-left: 20px;
-        }
         a {
             text-decoration: none;
-            @extend .text-primary;
             display: inline-block;
+            padding: 8px 14px;
+            font-size: 15px;
+        }
+        ul:first-of-type {
+            max-width: max-content;
+            margin-left: auto;
+            margin-bottom: 1rem;
+
+            li.active > a, li a:hover {
+                @extend .bg-third;
+            }
         }
     }
 
@@ -65,9 +71,9 @@
         
         @include mq(mobile, map($mq, lg)) {
             &.md-visible {
-                width: auto;
+                width: 900px;
                 border-radius: 0px;
-                max-width: 100%;
+                flex-wrap: nowrap;
                 
                 a {
                     padding: 10px 15px;
@@ -82,5 +88,87 @@
 
     .menu, .menu.invisible, .menu a, .menu a:hover {
         transition: all 300ms ease-in-out;
+    }
+
+    @include mq(desktop, map($mq, lg)) {
+        z-index: 4 !important;
+        .menu-trigger-btn {
+            position: relative;
+            z-index: 5;
+            max-width: max-content;
+            margin-left: auto;
+            max-height: 40px;
+        }
+
+        .menu-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: block;
+
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.75);
+
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .menu + li + li {
+                border-top: none !important;
+            }
+
+            &.invisible {
+                display: none;
+            }
+
+            ul {
+                background-color: transparent !important;
+                flex-direction: column !important;
+                position: static !important;
+                margin: 0 !important;
+
+                &:first-of-type {
+                    order: 2;
+                }
+
+                &.menu {
+                    order: 1;
+                }
+
+                a {
+                    text-align: center;
+                    background-color: transparent !important;
+                    font-size: 1.2rem;
+                }
+
+                &.menu li.active a, li a:hover {
+                    background-color: transparent !important;
+                    @include var(color, $theme, clr__third);
+                }
+
+                li + li {
+                    margin-top: 12px;
+                }
+                
+
+                & + ul {
+                    margin-top: 20px;
+
+                    li + li {
+                        border-color: transparent !important;
+                    }
+                }
+            }
+        }
+    }
+
+    @include mq(mobile, map($mq, lg)) {
+        .menu-wrapper.invisible {
+            visibility: visible;
+            opacity: 1;
+        }
     }
 }

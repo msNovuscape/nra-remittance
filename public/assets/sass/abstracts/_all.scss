@@ -1,2 +1,6 @@
 @import 'lib/all';
+@mixin var($property, $vname, $vars) {
+    #{$property}: map_get($vname, #{$vars});
+    #{$property}: var(--#{$vars});
+}
 @import 'setting/all';

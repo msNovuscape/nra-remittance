@@ -27,6 +27,20 @@
     .container {
         position: relative;
         z-index: 3;
+
+        @include mq(desktop, map($mq, sm)) {
+            padding: 0 15px 0 30px;
+
+            .list-horizontal {
+                flex-direction: column;
+                margin-bottom: 20px;
+
+                li + li {
+                    margin-top: 10px;
+                }
+            }
+        }
+
     }
 
     &-overlay {

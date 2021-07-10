@@ -1,0 +1,92 @@
+h1 + * {
+    margin-top: 40px;
+}
+
+.innerpage {
+    figure + &-article-content {
+        margin-top: 20px;
+    }
+    &-article-content {
+        max-width: 900px;
+    }
+}
+
+.contact-page {
+    h1 + * {
+        margin-top: 10px;
+    }
+
+    .info-box {
+        margin-top: 30px;
+        .fa {
+            font-size: 24px;
+            margin-right: 20px;
+            @extend .text-third;
+        }
+
+        div {
+            h4 {
+                & +* {
+                    margin-top: 2px;
+                }
+            }
+        }
+
+        & + .info-box {
+            margin-top: 20px;
+        }
+    }
+
+    .btn {
+        padding: 10px 30px;
+        background-color: transparent;
+        font-size: 1.4;
+    }
+
+    .form-wrapper {
+        border-radius: 5px;
+        padding: 30px 45px;
+        box-shadow: 0 0 5px rgba(#000, 0.14);
+        // background-image: linear-gradient(90deg, rgba(0, 0,54, 0.03), rgba(234, 133,54, 0.05));
+        background-image: linear-gradient(90deg, var(--clr__accent) 50%, var(--clr__secondary));
+
+        h2, p {
+            @extend .text-white;
+        }
+
+        .btn {
+            @include var(border-color, $theme, clr__white);
+            @extend .text-white;
+            margin-top: 30px;
+        }
+
+        @include mq(desktop, map($mq, sm)) {
+            padding: 20px;
+        }
+    }
+}
+
+.form-group {
+    & + * {
+        margin-top: 20px;
+    }
+
+    input[type="text"], input[type="email"], input[type="number"], input[type="combobox"],
+    select, textarea {
+        width: 100%;
+        display: block;
+        padding: 0 15px;
+        line-height: 40px;
+        border-radius: 5px;
+        
+        &:focus {
+            border-color: var(--clr__third);
+            outline: none;
+        }
+    }
+
+    input[type="text"], input[type="email"], input[type="number"], input[type="combobox"],
+    select {
+        height: 40px;
+    }
+}

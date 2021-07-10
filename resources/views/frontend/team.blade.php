@@ -14,7 +14,10 @@
                         </figure>
                         <article class="card__body text-center">
                             <h3>Name Here</h3>
-                            <div class="card__meta-designation">Designation</div>
+                            <div class="card__meta flex flex-content-between">
+                                <div class="card__meta-designation">Designation <br> <span class="text">Project Manager</span></div>
+                                <div class="card__meta-designation">Location <br> <span class="text">Koteshwor, Kathmandu, Nepal</span></div>
+                            </div>
                         </article>
                     </div>
                     <div class="card card--team">
@@ -23,7 +26,10 @@
                         </figure>
                         <article class="card__body text-center">
                             <h3>Name Here</h3>
-                            <div class="card__meta-designation">Designation</div>
+                            <div class="card__meta flex flex-content-between">
+                                <div class="card__meta-designation">Designation <br> <span class="text">Project Manager</span></div>
+                                <div class="card__meta-designation">Location <br> <span class="text">Koteshwor, Kathmandu, Nepal</span></div>
+                            </div>
                         </article>
                     </div>
                     <div class="card card--team">
@@ -32,7 +38,10 @@
                         </figure>
                         <article class="card__body text-center">
                             <h3>Name Here</h3>
-                            <div class="card__meta-designation">Designation</div>
+                            <div class="card__meta flex flex-content-between">
+                                <div class="card__meta-designation">Designation <br> <span class="text">Project Manager</span></div>
+                                <div class="card__meta-designation">Location <br> <span class="text">Koteshwor, Kathmandu, Nepal</span></div>
+                            </div>
                         </article>
                     </div>
                     <div class="card card--team">
@@ -41,7 +50,10 @@
                         </figure>
                         <article class="card__body text-center">
                             <h3>Name Here</h3>
-                            <div class="card__meta-designation">Designation</div>
+                            <div class="card__meta flex flex-content-between">
+                                <div class="card__meta-designation">Designation <br> <span class="text">Project Manager</span></div>
+                                <div class="card__meta-designation">Location <br> <span class="text">Koteshwor, Kathmandu, Nepal</span></div>
+                            </div>
                         </article>
                     </div>
                     <div class="card card--team">
@@ -50,7 +62,10 @@
                         </figure>
                         <article class="card__body text-center">
                             <h3>Name Here</h3>
-                            <div class="card__meta-designation">Designation</div>
+                            <div class="card__meta flex flex-content-between">
+                                <div class="card__meta-designation">Designation <br> <span class="text">Project Manager</span></div>
+                                <div class="card__meta-designation">Location <br> <span class="text">Koteshwor, Kathmandu, Nepal</span></div>
+                            </div>
                         </article>
                     </div>
                     <div class="card card--team">
@@ -59,7 +74,10 @@
                         </figure>
                         <article class="card__body text-center">
                             <h3>Name Here</h3>
-                            <div class="card__meta-designation">Designation</div>
+                            <div class="card__meta flex flex-content-between">
+                                <div class="card__meta-designation">Designation <br> <span class="text">Project Manager</span></div>
+                                <div class="card__meta-designation">Location <br> <span class="text">Koteshwor, Kathmandu, Nepal</span></div>
+                            </div>
                         </article>
                     </div>
                     <div class="card card--team">
@@ -68,7 +86,10 @@
                         </figure>
                         <article class="card__body text-center">
                             <h3>Name Here</h3>
-                            <div class="card__meta-designation">Designation</div>
+                            <div class="card__meta flex flex-content-between">
+                                <div class="card__meta-designation">Designation <br> <span class="text">Project Manager</span></div>
+                                <div class="card__meta-designation">Location <br> <span class="text">Koteshwor, Kathmandu, Nepal</span></div>
+                            </div>
                         </article>
                     </div>
                     <div class="card card--team">
@@ -77,7 +98,10 @@
                         </figure>
                         <article class="card__body text-center">
                             <h3>Name Here</h3>
-                            <div class="card__meta-designation">Designation</div>
+                            <div class="card__meta flex flex-content-between">
+                                <div class="card__meta-designation">Designation <br> <span class="text">Project Manager</span></div>
+                                <div class="card__meta-designation">Location <br> <span class="text">Koteshwor, Kathmandu, Nepal</span></div>
+                            </div>
                         </article>
                     </div>
                     <div class="card card--team">
@@ -86,7 +110,10 @@
                         </figure>
                         <article class="card__body text-center">
                             <h3>Name Here</h3>
-                            <div class="card__meta-designation">Designation</div>
+                            <div class="card__meta flex flex-content-between">
+                                <div class="card__meta-designation">Designation <br> <span class="text">Project Manager</span></div>
+                                <div class="card__meta-designation">Location <br> <span class="text">Koteshwor, Kathmandu, Nepal</span></div>
+                            </div>
                         </article>
                     </div>
                 </div>

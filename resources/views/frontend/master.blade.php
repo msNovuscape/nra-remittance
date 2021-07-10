@@ -24,40 +24,46 @@
                         <div class="logo-wrapper">
                             <div class="logo text-left">Nepal Rental Association</div>
                         </div>
-                        
-                        <ul class="list-reset list-horizontal">
-                            <li class="{{$title == 'Committee' ? 'active' : ''}}"><a href="/committee">Committee</a></li>
-                            <li class="{{$title == 'Message' ? 'active' : ''}}"><a href="/central_bank_message">Message From Central Bank</a></li>
-                            <li><a href="/remmitance_overview">Remittance Overview in Nepal</a></li>
-                        </ul>
+                        <button class="menu-trigger-btn">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <nav class="menu-wrapper invisible  text-right">
+
+                            <ul class="list-reset list-horizontal  bg-primary">
+                                <li class="{{$title == 'Committee' ? 'active' : ''}}"><a href="/committee">Committee</a></li>
+                                <li class="{{$title == 'Message' ? 'active' : ''}}"><a href="/central_bank_message">Message From Central Bank</a></li>
+                                <li><a href="/remmitance_overview">Remittance Overview in Nepal</a></li>
+                            </ul>
+                            <ul class="menu list-reset md-list-horizontal pos-abs md-visible md-pos-static flex-content-end bg-primary" >
+                                <li class="{{$title == 'Home' ? 'active' : ''}}"><a href="/">Home</a></li>
+                                <li class="{{$title == 'Gallery' ? 'active' : ''}}"><a href="/gallery">Gallery</a></li>
+                                <li class="{{$title == 'Acts' ? 'active' : ''}}"><a href="/acts_and_regulations">Acts & Regulations</a></li>
+                                <li class="{{$title == 'News' ? 'active' : ''}}"><a href="/news_and_update">News & Update</a></li>
+                                <li class="{{$title == 'Member' ? 'active' : ''}}"><a href="{{route('welcome.member')}}">Members</a></li>
+                                <li class="{{$title == 'Committee' ? 'active' : ''}}"><a href="/committee">Committee</a></li>
+                                <li class="{{$title == 'About' ? 'active' : ''}}"><a href="/about">About</a></li>
+                                <li class="{{$title == 'Contact' ? 'active' : ''}}"><a href="/contact">Contact</a></li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </nav>
-            <nav class="navbar bg-primary">
+            <!-- <nav class="navbar">
                 <div class="container">
                     <div class="menu-wrapper text-right pos-rel">
                         <button class="menu-trigger-btn">
                             <i class="fa fa-bars"></i>
                         </button>
-                        <ul class="menu invisible list-reset md-list-horizontal pos-abs md-visible md-pos-static">
-                            <li class="{{$title == 'Home' ? 'active' : ''}}"><a href="/">Home</a></li>
-                            <li class="{{$title == 'Gallery' ? 'active' : ''}}"><a href="/gallery">Gallery</a></li>
-                            <li class="{{$title == 'Acts' ? 'active' : ''}}"><a href="/acts_and_regulations">Acts & Regulations</a></li>
-                            <li class="{{$title == 'News' ? 'active' : ''}}"><a href="/news_and_update">News & Update</a></li>
-                            <li class="{{$title == 'Member' ? 'active' : ''}}"><a href="{{route('welcome.member')}}">Members</a></li>
-                            <li class="{{$title == 'Committee' ? 'active' : ''}}"><a href="/committee">Committee</a></li>
-                            <li class="{{$title == 'About' ? 'active' : ''}}"><a href="/about">About</a></li>
-                            <li class="{{$title == 'Contact' ? 'active' : ''}}"><a href="/contact">Contact</a></li>
-                        </ul>
+                        
                     </div>
                 </div>
-            </nav>
+            </nav> -->
         </header>
         <!-- header end -->
         <!-- Banner start -->
         @yield('content')
         <!-- Subscribe start -->
-        <section class="subscribe section-padding-50">
+        <section class="subscribe">
             <div class="container">
                 <div class="grid grid-cols-2">
                     <article class="bg-secondary pa-20">
@@ -133,7 +139,9 @@
 
     <!-- Script -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
     <script src="assets/js/core.js"></script>
 </body>
 </html>

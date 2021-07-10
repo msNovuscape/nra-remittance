@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="grid grid-cols-2 grid-gap-30 article-wrapper">
                     <article>
-                        <span class="sub-title text-third">- About us</span>
+                        <span class="dash-line bg-third"></span><span class="sub-title text-uppercase">About us</span>
                         <h1 class="text-primary site-title">About NRA</h1>
                         <p>Licensed remittance companies involved in remittance business came together to form Nepal Remittance Association (NRA) on 23rd Baisakh 2061 BS (May 6, 2005 A.D) with the registration number of 1020/060/061. The association was formed with the broader objective.</p>
                     </article>
@@ -32,7 +32,7 @@
                     </div>
                     <div class="news-list grid-span-2">
                         <article>
-                            <span class="sub-title text-third">- News</span>
+                        <span class="dash-line bg-third"></span><span class="sub-title text-uppercase">News</span>
                             <h2 class="text-primary">Lorem ipsum dolor sit amet.</h2>
                         </article>
                         <div class="card card--news-list flex flex-cols-1-3 flex-items-center">
@@ -85,7 +85,7 @@
             <div class="container">
                 <div class="grid grid-cols-2 grid-gap-30 article-wrapper bg-light-grey">
                     <article>
-                        <span class="sub-title text-third">- Title</span>
+                    <span class="dash-line bg-third"></span><span class="sub-title text-uppercase">Title</span>
                         <h2></h2>
                         <p>NRA is registered with Office of District Administration, Kathmandu, Internal Revenue Department, Social Welface Council and District Development Committee, Kathmandu. </p>
                         <p>20 remittance companies and 4 financial institutions including commercial banks and development banks are associated with NRA. NRA has always aimed to accommodate all the license remittance companies of Nepal under its umbrella.</p>
@@ -116,7 +116,7 @@
         <!-- article end -->
         
         <!-- Ad start -->
-        <section class="ad">
+        <section class="ad" style="padding-bottom: 50px;">
             <div class="container">
                 <div class="grid grid-cols-2 grid-gap-10">
                     <figure class="ad__box">

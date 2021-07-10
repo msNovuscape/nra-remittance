@@ -1,6 +1,40 @@
 .table-data {
+    .exchange-rate {
+        margin-bottom: 40px;
+    }
+    .grid {
+        position: relative;
+    }
+    .calendar {
+        padding:8px 15px;
+        background: #ffffff;
+        border-radius: 25px;
+        font-size:18px;
+        margin-top: 0;
+        border: 1px solid #333333;
+        box-shadow: 0px 20px 40px rgba(59,60,56,0.05);
+        max-width: max-content;
+        margin-left: 30px;
+        }
+        
+        .icon {
+            position: absolute;
+            @extend .text-third;
+            font-size:20px;
+            top: 0;
+            right: 118px;
+            width: 43px;
+            height: 43px;
+            line-height: 43px;
+            border-left: 1px solid var(--clr__primary);
+            text-align: center;
+        }
     &-content {
         padding: 20px;
+
+        .section-date {
+            opacity: 0.7;
+        }
 
         h2 {
             margin-bottom: 10px;
@@ -19,7 +53,6 @@
             width: 150px;
             border-radius: 5px;
         }
-
 
         @include mq(mobile, map($mq, lg)) {
             padding: 20px 30px;
@@ -42,6 +75,12 @@
         &.th-border th {
             border: 1px solid;
         }
+
+        &.th-border, &.th-bg-third {
+            th {
+                padding: 6px 14px;
+            }
+        }
     }
 }
 
@@ -51,18 +90,48 @@
     }
 
     .card--feature {
-        padding: 10px;
-        box-shadow: 0 0 6px rgba(#000, 0.09);
-        border-radius: 20px;
+        // padding: 10px;
+        // box-shadow: 0 0 6px rgba(#000, 0.09);
+        // border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        flex: wrap;
+        height: 100%;
+        
+        // &__body {
+        //     margin-bottom: 20px;
+        // }
+
+        h3 {
+            padding-right: 10px;
+            font-size: 1.5rem;
+            line-height: 1.2;
+        }
 
         p + * {
             margin-top: 10px;
         }
 
         .btn {
-            padding: 6px 20px;
+            margin-block-start: auto;
+        }
+
+        &.feature-first-card {
+            h3 + p {
+                font-size: 1.2rem;
+                line-height: 1.2;
+                font-weight: 300;
+            }
         }
     }
+}
+
+.dash-line {
+    display: inline-block;
+    vertical-align: middle;
+    width: 10px;
+    height: 2px;
+    margin-right: 10px;
 }
 
 .article {
@@ -133,3 +202,101 @@
         }
     }
 }
+
+
+.ui-datepicker {
+    background: #ffffff;
+    border-radius: 15px;
+    }
+    .ui-datepicker-header {
+    height: 50px;
+    line-height: 50px;
+    color: #ffffff;
+    @extend .bg-third;
+    margin-bottom: 10px;
+    }
+    .ui-datepicker-prev,
+    .ui-datepicker-next {
+    width: 20px;
+    height: 20px;
+    text-indent: 9999px;
+    border-radius: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    margin-top: 12px;
+    }
+    .ui-datepicker-prev {
+    float: left;
+    margin-left: 12px;
+    }
+    .ui-datepicker-prev:after {
+    transform: rotate(45deg);
+    margin: -43px 0px 0px 8px;
+    }
+    .ui-datepicker-next {
+    float: right;
+    margin-right: 12px;
+    }
+    .ui-datepicker-next:after {
+    transform: rotate(-135deg);
+    margin: -43px 0px 0px 6px;
+    }
+    .ui-datepicker-prev:after,
+    .ui-datepicker-next:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    }
+    .ui-datepicker-prev:hover,
+    .ui-datepicker-next:hover,
+    .ui-datepicker-prev:hover:after,
+    .ui-datepicker-next:hover:after {
+    border-color: #333333;
+    }
+    .ui-datepicker-title {
+    text-align: center;
+    font-size:25px;
+    }
+    .ui-datepicker-calendar {
+    width: 100%;
+    text-align: center;
+    }
+    .ui-datepicker-calendar thead tr th span {
+    display: block;
+    width: 40px;
+    @extend .text-third;
+    margin-bottom: 5px;
+    font-size: 18px;
+    }
+    .ui-state-default {
+    display: block;
+    text-decoration: none;
+    color: #333333;
+    line-height: 40px;
+    font-size: 16px;
+    }
+    .ui-state-default:hover {
+    color: #ffffff;
+    @extend .bg-third;
+    border-radius:50px;
+    transition: all 0.25s cubic-bezier(0.7, -0.12, 0.2, 1.12);
+    }
+    .ui-state-highlight {
+    color: #ffffff;
+    @extend .bg-third;
+    border-radius:50px;
+    }
+    
+    .ui-state-active {
+    color: #ffffff;
+    @extend .bg-third;
+    border-radius:50px;
+    }
+    .ui-datepicker-unselectable .ui-state-default {
+    color: #eee;
+    border: 2px solid transparent;
+    }

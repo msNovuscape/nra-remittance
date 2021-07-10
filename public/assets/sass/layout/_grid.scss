@@ -28,3 +28,41 @@
 .grid-cols-1-2 {
     grid-template-columns: 1fr 2fr;
 }
+.grid-cols-2-1 {
+    grid-template-columns: 2fr 1fr;
+}
+
+@include mq(desktop, map($mq, sm))  {
+    .grid, .news .grid, .news .grid.grid-cols-3 {
+        grid-template-columns: 1fr !important;
+        row-gap: 30px;
+        column-gap: 0;
+    }
+    .top-bar {
+        .grid {
+            grid-template-columns: 2fr 1fr !important;
+        }
+    }
+    .container {
+        padding: 0 15px;
+    }
+
+    .footer .grid {
+        padding: 0 20px;
+    }
+
+    .footer .container .social-list.list-horizontal {
+        flex-direction: row;
+
+        li + li {
+            margin-top: 0;
+            margin-left: 10px;
+        }
+
+        .fa {
+            font-size: 24px;
+        }
+    }
+
+     
+}

@@ -14,7 +14,13 @@ $(document).ready( function () {
     });
 
     $('.menu-trigger-btn').click(function() {
-        $('.header .menu').toggleClass('invisible');
+        $('.header .menu-wrapper').toggleClass('invisible');
     })
-                  
+
+    
+    $('#datepicker').datepicker({
+        format: 'dd-mm-yyyy',
+        startDate: '+1d'
+    });      
 })
+
