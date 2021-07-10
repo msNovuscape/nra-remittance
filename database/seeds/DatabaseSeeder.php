@@ -11,13 +11,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::create([
+        \App\User::create([
             'name' => 'Admin',
-            'email' => 'nraadmin@gmail.com',
+            'email' => 'nraadmin@admin.com',
              'password' => bcrypt('admin123')
         ]);
 
-        \App\Models\User::create([
+        \App\User::create([
             'name' => 'Admin',
             'email' => 'admin@admin.com',
              'password' => bcrypt('admin123')

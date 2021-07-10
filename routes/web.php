@@ -11,44 +11,28 @@
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.welcome');
-});
-Route::get('/team', function () {
-    return view('frontend.team');
+// Route::get('/', function () {
+//     return view('frontend.welcome');
+// });
+Route::group(['prefix' => '/',  'middleware' => 'guest'], function(){
+
+    Route::get('','Frontend\HomePageController@home')->name('welcome.index');
+    Route::get('about','Frontend\HomePageController@about')->name('welcome.about');
+    Route::get('contact','Frontend\HomePageController@contact')->name('welcome.contact');
+    Route::get('remmitance_overview','Frontend\HomePageController@overview')->name('welcome.overview');
+    Route::get('gallery','Frontend\HomePageController@gallery')->name('welcome.gallery');
+    Route::get('central_bank_message','Frontend\HomePageController@central_bank_message')->name('welcome.central_bank_message');
+    Route::get('acts_and_regulations','Frontend\HomePageController@acts_and_regulations')->name('welcome.acts_and_regulations');
+    Route::get('news_and_update','Frontend\HomePageController@news_and_update')->name('welcome.news_and_update');
+    Route::get('committee','Frontend\HomePageController@committee')->name('welcome.committee');
+    Route::get('member','Frontend\HomePageController@member')->name('welcome.member');
+
+    Route::get('admin','Admin\LoginController@login')->name('login');
+    Route::post('admin_login','Admin\LoginController@post_login')->name('post_login');
 });
 
-Route::get('/about', function () {
-    return view('frontend.about');                          
-});
-Route::get('/contact', function () {
-    return view('frontend.contact');
-});
-
-Route::get('/remmitance_overview', function () {
-    return view('frontend.remmitance_overview');                          
-});
-Route::get('/gallery', function () {
-    return view('frontend.gallery');
-});
-
-Route::get('/committee', function () {
-    return view('frontend.committee');                          
-});
-Route::get('/acts_and_regulations', function () {
-    return view('frontend.acts_and_regulations');                          
-});
-Route::get('/central_bank_message', function () {
-    return view('frontend.central_bank_message');                          
-});
-Route::get('/news_and_update', function () {
-    return view('frontend.news_and_update');                          
-});
-
-Route::get('/admin','Admin\LoginController@login')->name('login')->middleware('guest');
 
 
-Route::post('/admin_login','Admin\LoginController@post_login')->name('post_login')->middleware('guest');
 
 Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function()
 {
