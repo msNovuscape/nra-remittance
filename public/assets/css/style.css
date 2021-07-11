@@ -76,6 +76,11 @@ img, iframe, video, object {
   max-width: 100%;
 }
 
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .slick {
   overflow: hidden;
 }
@@ -581,8 +586,20 @@ h3 {
   }
 }
 
-.header .logo {
-  font-size: 1.5rem;
+.header .logo-wrapper a.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header .logo-wrapper .logo {
+  font-size: 1.1rem;
+  line-height: 1;
+  max-width: 136px;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  padding-left: 15px;
 }
 
 .header .top-bar {
@@ -601,7 +618,7 @@ h3 {
   max-width: -moz-max-content;
   max-width: max-content;
   margin-left: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .header .menu {
@@ -663,6 +680,11 @@ h3 {
   .header {
     z-index: 4 !important;
   }
+  .header .grid {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   .header .menu-trigger-btn {
     position: relative;
     z-index: 5;
@@ -671,6 +693,15 @@ h3 {
     max-width: max-content;
     margin-left: auto;
     max-height: 40px;
+  }
+  .header .logo-wrapper .flex {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header .logo-wrapper .flex img {
+    max-width: 80px;
+    height: auto;
   }
   .header .menu-wrapper {
     position: fixed;
@@ -724,7 +755,7 @@ h3 {
   .header .menu-wrapper ul a {
     text-align: center;
     background-color: transparent !important;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   .header .menu-wrapper ul.menu li.active a, .header .menu-wrapper ul li a:hover {
     background-color: transparent !important;
@@ -732,13 +763,19 @@ h3 {
     color: var(--clr__third);
   }
   .header .menu-wrapper ul li + li {
-    margin-top: 12px;
+    margin-top: 0px;
   }
   .header .menu-wrapper ul + ul {
     margin-top: 20px;
   }
   .header .menu-wrapper ul + ul li + li {
     border-color: transparent !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header .logo-wrapper .flex .logo {
+    display: none;
   }
 }
 
@@ -1447,6 +1484,10 @@ figure + .innerpage-article-content {
   border-radius: 25px;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .bg-primary, .btn-primary {
   background-color: #222222;
   background-color: var(--clr__primary);
@@ -1487,7 +1528,7 @@ figure + .innerpage-article-content {
   color: var(--clr__secondary);
 }
 
-.text-third, .table-data .icon, .ui-datepicker-calendar thead tr th span, .contact-page .info-box .fa, .table-data .table tbody > tr > td:first-of-type, .btn-outline-third {
+.text-third, .header .logo-wrapper .logo, .table-data .icon, .ui-datepicker-calendar thead tr th span, .contact-page .info-box .fa, .table-data .table tbody > tr > td:first-of-type, .btn-outline-third {
   color: #e9802d;
   color: var(--clr__third);
 }
@@ -1566,6 +1607,69 @@ figure + .innerpage-article-content {
   .md-visible {
     visibility: visible;
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+  }
+  .hero-banner-slider {
+    margin-bottom: 0 !important;
+  }
+  .card--feature figure {
+    margin-bottom: 10px !important;
+  }
+  .section-padding-50, .innerpage + .subscribe {
+    padding: 35px 0;
+  }
+  .section-padding-50 h2, .innerpage + .subscribe h2 {
+    margin-bottom: 20px;
+  }
+  .table-data-content {
+    padding: 20px 10px;
+  }
+  .table-data-content p {
+    margin-bottom: 10px;
+  }
+  .table-data .table-data-content .text-center h2, .table-data .table-data-content span {
+    text-align: center !important;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .footer .container {
+    padding-left: 70px;
+  }
+  .card--team .card__meta-designation .text {
+    line-height: 1.2;
+    display: block;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .hero-banner .max-w-40 {
+    max-width: 60%;
+  }
+  .hero-banner h1 + * {
+    margin-top: 10px;
+  }
+  .table-data .exchange-rate .icon {
+    display: none !important;
+  }
+  .gallery-content .card--gallery figure img {
+    width: 100%;
+    height: 100%;
+  }
+  .section-padding-50, .innerpage + .subscribe {
+    padding: 35px 0;
+  }
+  .section-padding-50 h2, .innerpage + .subscribe h2 {
+    margin-bottom: 20px;
   }
 }
 /*# sourceMappingURL=style.css.map */

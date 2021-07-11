@@ -29,6 +29,9 @@ p, .section__header {
 img, iframe, video, object {
     max-width: 100%;
 }
+img {
+    object-fit: cover;
+}
 .slick {
     overflow: hidden;
 }

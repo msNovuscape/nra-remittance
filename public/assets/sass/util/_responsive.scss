@@ -1,0 +1,101 @@
+@include mq(desktop, map($mq, sm)) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        line-height: 1.1;
+    }
+
+    .hero-banner {
+
+        &-slider {
+            margin-bottom: 0 !important;
+        }
+    }
+    .card--feature {
+        figure {
+            margin-bottom: 10px !important;
+        }
+    }
+
+    .section-padding-50 {
+        padding: 35px 0;
+
+        h2 {
+            margin-bottom: 20px;
+        }
+    }
+
+
+    .table-data {
+        &-content {
+            padding: 20px 10px;
+
+            p {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .table-data .table-data-content {
+        
+        .text-center h2, span {
+            text-align: center !important;
+        }
+    }
+}
+
+@include mq(mobile, map($mq, sm)) {
+    .footer {
+        .container {
+            padding-left: 70px;
+        }
+    }
+
+    .card--team {
+        .card__meta-designation {
+            .text {
+                line-height: 1.2;
+                display: block;
+                margin-top: 5px;
+            }
+        }
+    }
+}
+
+@include mq(desktop, map($mq, xl)) {
+    .hero-banner {
+        .max-w-40 {
+            max-width: 60%;
+        }
+        h1 + * {
+            margin-top: 10px;
+        }
+    }
+    .table-data {
+        .exchange-rate {
+            .icon {
+                display: none !important;
+            }
+        }
+    }
+
+    
+    .gallery-content {
+        .card--gallery {
+            figure img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    } 
+
+    .section-padding-50 {
+        padding: 35px 0;
+
+        h2 {
+            margin-bottom: 20px;
+        }
+    }
+}
