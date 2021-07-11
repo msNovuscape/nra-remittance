@@ -16,6 +16,10 @@
 
             &:before {
                 left: -30px;
+
+                @include mq(desktop, map($mq, sm)) {
+                    left: -20px;
+                }
             }
 
             & + li {

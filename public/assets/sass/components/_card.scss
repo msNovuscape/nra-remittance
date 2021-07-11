@@ -4,6 +4,24 @@
         margin-top: 10px;
         padding: 6px 20px;
     }
+    figure {
+        overflow: hidden;
+        img {
+            display: block;
+            margin-bottom: 0;
+        }
+    }
+    
+    &__title {
+        display: block;
+        text-decoration: none;
+        @extend .text-primary;
+        font-size: 1.4rem;           
+    }
+    &__date {
+        font-size: 14px;
+        opacity: 0.75;
+    }
     &__meta {
         &-date, &-designation {
             font-size: 14px;
@@ -34,6 +52,18 @@
         figure, figure img {
             height: 100%;
         }
+
+        h3 {
+            font-size: 1.3rem;
+        }
+
+        h3 + * {
+            margin-top: 0px;
+        }
+
+        h3 + * + * {
+            margin-top: 5px;
+        }
     }
 
     &--team {
@@ -58,5 +88,123 @@
             padding-top: 50px;
             margin-top: -40px;
         }
+
+        .card__meta-designation .text {
+            font-size: 12px;
+            opacity: 0.75;
+        }
+        .card__meta-designation {
+            text-align: left;
+            max-width: 50%;
+            flex-basis: 50%;
+            width: 50%;
+        }
+
+        h3 {
+          &:after {
+              content: '';
+              display: block;
+              margin: 2px auto 10px;
+              width: 20px;
+              height: 3px;
+              @extend .bg-third;
+          }  
+        }
+    }
+
+    &--gallery {
+        box-shadow: 0px 0px 6px rgba(#000, 0.14);
+        border-radius: 10px;
+        overflow: hidden;
+        figure {
+            height: 170px;
+            overflow: hidden;
+            img {
+                display: block;
+                margin-bottom: 0;
+            }
+        }
+
+        &__body {
+            padding: 10px 20px;
+            
+            a {
+                text-decoration: none;
+            }
+        }
+
+        &:hover {
+            box-shadow: 0px 3px 8px rgba(#000, 0.14);
+            img {
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    &--gallery, &--gallery img, &--gallery a,
+    &--gallery:hover, &--gallery:hover img, &--gallery:hover a,
+    &--news-box img, &--news-box a,
+    &--news-box:hover img, &--news-box:hover a {
+        transition: all 300ms ease-in-out;
+    }
+
+    &--news-box {
+        box-shadow: 0 0 6px rgba(#000, 0.14);
+        border-radius: 10px;
+        overflow: hidden;
+        
+        figure {
+            max-height: 150px;
+            border-radius: 10px;
+            overflow: hidden;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        &__body {
+            padding: 10px 15px;
+
+            .btn {
+                margin-top: 20px;
+            }
+        }
+        
+        &:hover {
+            img {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+
+.btn {
+    padding: 6px 30px;
+    position: relative;
+    max-width: max-content;
+
+    .fa {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0;
+        visibility: hidden;
+        font-size: 0;
+    }
+
+    &:hover {
+        .fa {
+            right: -15px;
+            opacity: 1;
+            visibility: visible;
+            font-size: 25px;
+        }
+    }
+
+    .fa, &:hover .fa {
+        transition: all 300ms ease-in-out;
     }
 }

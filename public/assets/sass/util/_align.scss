@@ -11,6 +11,12 @@
     text-align: justify;   
 }
 
+.text {
+    &-uppercase {
+        text-transform: uppercase;
+    }
+}
+
 .pos {
     &-rel {
         position: relative;

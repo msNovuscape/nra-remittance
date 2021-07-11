@@ -8,7 +8,7 @@
                         <article class="max-w-40 pos-abs">
                             <h1 class="text-white">Banner Title</h1>
                             <p class="text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore, placeat unde eum commodi quam tempora dignissimos suscipit delectus maxime ipsam?</p>
-                            <a href="#" class="btn btn-white btn-outline rounded text-white">Read More</a>
+                            <a href="#" class="btn btn-white btn-outline pill text-white">Read More <i class="fa fa-long-arrow-right"></i></a>
                         </article>
                     </div>
                     <div class="hero-banner-slider-item pos-rel">
@@ -27,59 +27,57 @@
         <!-- features start -->
         <section class="feature section-padding-50">
             <div class="container">
-                <article class="section__header">
+                <!-- <article class="section__header">
                     <h2>Feature</h2>
-                </article>
+                </article> -->
                 <div class="grid grid-cols-5 grid-gap-30">
-                    <div class="card card--feature">
-                        <figure class="card__img card--feature__img">
-                            <img src="https://image.flaticon.com/icons/png/512/1570/1570102.png" alt="">
-                        </figure>
+                    <div class="card card--feature feature-first-card">
                         <article class="card__body card--feature__body">
+                            <p class="mb-o"><span class="bg-third dash-line"></span> <span class="text-uppercase">What we do</span></p>
                             <h3>We Give Exchange</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati?</p>
-                            <a href="#" class="btn btn-primary rounded">Read More</a>
                         </article>
+                        <a href="#" class="btn btn-outline-third pill">Discover More <i class="fa fa-long-arrow-right"></i></a>
                     </div>
                     <div class="card card--feature">
                         <figure class="card__img card--feature__img">
-                            <img src="https://image.flaticon.com/icons/png/512/1570/1570102.png" alt="">
+                            <img src="{{ asset('assets/image/information.png') }}" alt="">
                         </figure>
                         <article class="card__body card--feature__body">
                             <h3>Consumer Information</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati?</p>
-                            <a href="#" class="btn btn-primary rounded">Read More</a>
                         </article>
+                        <a href="#" class="btn btn-outline-third pill">Read More <i class="fa fa-long-arrow-right"></i></a>
                     </div>
                     <div class="card card--feature">
                         <figure class="card__img card--feature__img">
-                            <img src="https://image.flaticon.com/icons/png/512/1570/1570102.png" alt="">
+                            <img src="{{ asset('assets/image/calendar.png') }}" alt="">
                         </figure>
                         <article class="card__body card--feature__body">
                             <h3>Events & Activities</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati?</p>
-                            <a href="#" class="btn btn-primary rounded">Read More</a>
                         </article>
+                        <a href="#" class="btn btn-outline-third pill">Read More <i class="fa fa-long-arrow-right"></i></a>
                     </div>
                     <div class="card card--feature">
                         <figure class="card__img card--feature__img">
-                            <img src="https://image.flaticon.com/icons/png/512/1570/1570102.png" alt="">
+                            <img src="{{ asset('assets/image/presentation.png') }}" alt="">
                         </figure>
                         <article class="card__body card--feature__body">
                             <h3>Traning & Development</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati?</p>
-                            <a href="#" class="btn btn-primary rounded">Read More</a>
                         </article>
+                        <a href="#" class="btn btn-outline-third pill">Read More <i class="fa fa-long-arrow-right"></i></a>
                     </div>
                     <div class="card card--feature">
                         <figure class="card__img card--feature__img">
-                            <img src="https://image.flaticon.com/icons/png/512/1570/1570102.png" alt="">
+                            <img src="{{ asset('assets/image/directory.png') }}" alt="">
                         </figure>
                         <article class="card__body card--feature__body">
                             <h3>Member Directory</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, obcaecati?</p>
-                            <a href="#" class="btn btn-primary rounded">Read More</a>
                         </article>
+                        <a href="#" class="btn btn-outline-third pill">Read More <i class="fa fa-long-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -108,7 +106,7 @@
                     <article>
                         <h2>We Give Exchange</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consequatur necessitatibus voluptatum tempora odit corporis?</p>
-                        <a href="#" class="btn btn-primary rounded">Read More</a>
+                        <a href="#" class="btn btn-outline-third pill">Read More <i class="fa fa-long-arrow-right"></i></a>
                     </article>
                     <figure>
                         <img src="https://cdn.pixabay.com/photo/2021/06/13/07/33/mountain-pass-6332476_960_720.jpg" alt="">
@@ -136,14 +134,20 @@
         <!-- table start -->
         <section class="table-data section-padding-50">
             <div class="container">
+                <form action="" class="exchange-rate">
+                    <div class="grid grid-cols-2-1 grid-gap-30">
+                        <h2 class="text-right">Today's Exchange Rate</h2>
+                        <input placeholder="Choose date" type="text" name="checkIn" id="datepicker" value="" class="calendar"><i class="fa fa-calendar icon"></i>
+                    </div>
+                </form>
                 <div class="grid grid-cols-2 grid-gap-30">
                     <div class="table-data-content bg-secondary">
-                        <article>
+                        <article class="text-center">
                             <h2>10 AM Exchange Rate</h2>
                             <p><span class="section-date">June-21-2021</span></p>
                         </article>
                         <div class="table-responsive">
-                            <table class="table bg-secondary th-border table-hover">
+                            <table class="table bg-secondary th-border">
                                 <thead>
                                     <tr>
                                         <th>Currency</th>
@@ -182,17 +186,12 @@
                         </div>
                     </div>
                     <div class="table-data-content bg-secondary">
-                        <article class="flex flex-wrap flex-col md-flex-row flex-items-center flex-content-between">
+                        <article class="text-center">
                             <h2>2 PM Exchange Rate</h2>
-                            <form action="">
-                                <select class="" name="" id="">
-                                    <option value="">Select Date</option>
-                                    <option value="1">June-21-2021</option>
-                                </select>
-                            </form>
+                            <p><span class="section-date">June-21-2021</span></p>
                         </article>
                         <div class="table-responsive">
-                            <table class="table bg-secondary table-hover">
+                            <table class="table bg-secondary th-bg-third">
                                 <thead>
                                     <tr>
                                         <th>Currency</th>
@@ -250,7 +249,7 @@
                             <h3>Remittance equal to annual budget</h3>
                             <div class="card__meta-date">June-21-2021</div>
                             <p>Remittance income of the country in the current fiscal year will be almost equal to the annual budget of Nepal......</p>
-                            <a href="#" class="btn btn-white rounded">Read More</a>
+                            <a href="#" class="btn btn-white btn-outline text-white pill">Read More <i class="fa fa-long-arrow-right"></i></a>
                         </article>
                     </div>
                     <div class="news-list grid-span-2">
@@ -262,7 +261,7 @@
                                 <h3>Remittance equal to annual budget</h3>
                                 <div class="card__meta-date">June-21-2021</div>
                                 <p>Remittance income of the country in the current fiscal year will be almost equal to the annual budget of Nepal......</p>
-                                <a href="#" class="btn btn-primary rounded">Read More</a>
+                                <a href="#" class="btn btn-outline-third pill">Read More <i class="fa fa-long-arrow-right"></i></a>
                             </article>
                         </div>
                         <div class="card card--news-list flex flex-cols-1-3">
@@ -273,7 +272,7 @@
                                 <h3>Remittance equal to annual budget</h3>
                                 <div class="card__meta-date">June-21-2021</div>
                                 <p>Remittance income of the country in the current fiscal year will be almost equal to the annual budget of Nepal......</p>
-                                <a href="#" class="btn btn-primary rounded">Read More</a>
+                                <a href="#" class="btn btn-outline-third pill">Read More <i class="fa fa-long-arrow-right"></i></a>
                             </article>
                         </div>
                         <div class="card card--news-list flex flex-cols-1-3">
@@ -284,7 +283,7 @@
                                 <h3>Remittance equal to annual budget</h3>
                                 <div class="card__meta-date">June-21-2021</div>
                                 <p>Remittance income of the country in the current fiscal year will be almost equal to the annual budget of Nepal......</p>
-                                <a href="#" class="btn btn-primary rounded">Read More</a>
+                                <a href="#" class="btn btn-outline-third pill">Read More <i class="fa fa-long-arrow-right"></i></a>
                             </article>
                         </div>
                     </div>
@@ -307,8 +306,8 @@
                         <article class="card__body text-center">
                             <h3>Name Here</h3>
                             <div class="card__meta flex flex-content-between">
-                                <div class="card__meta-designation">Designation</div>
-                                <div class="card__meta-designation">LocatION</div>
+                                <div class="card__meta-designation">Designation <br> <span class="text">Project Manager</span></div>
+                                <div class="card__meta-designation">Location <br> <span class="text">Koteshwor, Kathmandu, Nepal</span></div>
                             </div>
                         </article>
                     </div>
@@ -319,8 +318,8 @@
                         <article class="card__body text-center">
                             <h3>Name Here</h3>
                             <div class="card__meta flex flex-content-between">
-                                <div class="card__meta-designation">Designation</div>
-                                <div class="card__meta-designation">Locate</div>
+                                <div class="card__meta-designation">Designation <br> <span class="text">Project Manager</span></div>
+                                <div class="card__meta-designation">Location <br> <span class="text">Koteshwor, Kathmandu, Nepal</span></div>
                             </div>
                         </article>
                     </div>
@@ -331,8 +330,8 @@
                         <article class="card__body text-center">
                             <h3>Name Here</h3>
                             <div class="card__meta flex flex-content-between">
-                                <div class="card__meta-designation">Designation</div>
-                                <div class="card__meta-designation">Locate</div>
+                                <div class="card__meta-designation">Designation <br> <span class="text">Project Manager</span></div>
+                                <div class="card__meta-designation">Location <br> <span class="text">Koteshwor, Kathmandu, Nepal</span></div>
                             </div>
                         </article>
                     </div>
