@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Core CSS Links -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
 </head>
 <body>
     <div class="site-wrapper">
@@ -22,7 +22,8 @@
                 <div class="container">
                     <div class="grid grid-cols-2 gird-gap-30">
                         <div class="logo-wrapper">
-                            <div class="logo text-left">Nepal Rental Association</div>
+                            <div class="logo text-left">Nepal Remitters Association</div>
+                            <img style = "object-fit: cover;" class = "logo" height = "100px"   src = "{{URL::asset('assets/image/nra-logo.png')}}">
                         </div>
                         <button class="menu-trigger-btn">
                             <i class="fa fa-bars"></i>
@@ -40,7 +41,7 @@
                                 <li class="{{$title == 'Acts' ? 'active' : ''}}"><a href="/acts_and_regulations">Acts & Regulations</a></li>
                                 <li class="{{$title == 'News' ? 'active' : ''}}"><a href="/news_and_update">News & Update</a></li>
                                 <li class="{{$title == 'Member' ? 'active' : ''}}"><a href="{{route('welcome.member')}}">Members</a></li>
-                                <li class="{{$title == 'Committee' ? 'active' : ''}}"><a href="/committee">Committee</a></li>
+                                <!-- <li class="{{$title == 'Committee' ? 'active' : ''}}"><a href="/committee">Committee</a></li> -->
                                 <li class="{{$title == 'About' ? 'active' : ''}}"><a href="/about">About</a></li>
                                 <li class="{{$title == 'Contact' ? 'active' : ''}}"><a href="/contact">Contact</a></li>
                             </ul>
@@ -142,6 +143,6 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
-    <script src="assets/js/core.js"></script>
+    <script src="{{URL::asset('assets/js/core.js')}}"></script>
 </body>
 </html>
