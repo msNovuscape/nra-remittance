@@ -67,3 +67,23 @@
         fill: var(--clr__white);
     }
 }
+
+.innerpage-article-content {
+    &.table-data-content {
+        margin-left: 0;
+        padding-left: 0;
+
+        table.table {
+            td {
+                text-align: center;
+            }
+
+            a {
+                @include var(color, $theme, clr__white);
+            }
+            &.th-border th {
+                border: 1px solid;
+            }
+        }
+    }
+}

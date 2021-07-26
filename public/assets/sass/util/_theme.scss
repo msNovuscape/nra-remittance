@@ -13,6 +13,9 @@ h1, h2, h3, h4, h5, h6 {
     &-primary {
         @include var(background-color, $theme, clr__primary);
     }
+    &-menu {
+        @include var(background-color, $theme, clr__menu);
+    }
 
     &-secondary {
         @include var(background-color, $theme, clr__secondary);
@@ -38,6 +41,9 @@ h1, h2, h3, h4, h5, h6 {
 .text {
     &-primary {
         @include var(color, $theme, clr__primary);
+    }
+    &-menu {
+        @include var(color, $theme, clr__menu);
     }
     &-secondary {
         @include var(color, $theme, clr__secondary);
@@ -92,7 +98,7 @@ h1, h2, h3, h4, h5, h6 {
         }
     }
 
-    .top-bar ul.bg-primary {
+    .top-bar ul.bg-menu {
         a {
             @extend .text-white;
         }
@@ -227,7 +233,9 @@ h1, h2, h3, h4, h5, h6 {
             @extend .text-accent;
         }
 
-        &.btn-white {
+        &-white {
+            border: 1px solid;
+            @include var(border-color, $theme, clr__white);
             @extend .text-white;
         }
     }
@@ -237,6 +245,16 @@ h1, h2, h3, h4, h5, h6 {
     .slick-next, .slick-prev {
         &:before {
             color: var(--clr__white) !important;
+        }
+    }
+}
+
+.footer {
+    .menu-link {
+        .list-reset a {
+            &:hover, &:focus {
+                @include var(color, $theme, clr__third);   
+            }
         }
     }
 }
