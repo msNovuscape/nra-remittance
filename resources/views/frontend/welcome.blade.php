@@ -4,20 +4,20 @@
             <div class="container">
                 <div class="slick hero-banner-slider">
                     <div class="hero-banner-slider-item pos-rel">
-                        <img src="https://cdn.pixabay.com/photo/2021/06/13/07/33/mountain-pass-6332476_960_720.jpg" alt="banner img">
-                        <article class="max-w-40 pos-abs">
+                        <img src="{{URL::asset('assets/image/nra_cover1.jpeg')}}" alt="banner img">
+                        <!-- <article class="max-w-40 pos-abs">
                             <h1 class="text-white">Banner Title</h1>
                             <p class="text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore, placeat unde eum commodi quam tempora dignissimos suscipit delectus maxime ipsam?</p>
                             <a href="#" class="btn btn-white btn-outline pill text-white">Read More <i class="fa fa-long-arrow-right"></i></a>
-                        </article>
+                        </article> -->
                     </div>
                     <div class="hero-banner-slider-item pos-rel">
-                        <img src="https://cdn.pixabay.com/photo/2021/06/13/07/33/mountain-pass-6332476_960_720.jpg" alt="banner img">
-                        <article class="max-w-40 pos-abs">
+                        <img src="{{URL::asset('assets/image/nra_cover2.jpeg')}}" alt="banner img">
+                        <!-- <article class="max-w-40 pos-abs">
                             <h1 class="text-white">Banner Title</h1>
                             <p class="text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore, placeat unde eum commodi quam tempora dignissimos suscipit delectus maxime ipsam?</p>
                             <a href="#" class="btn btn-white btn-outline rounded text-white">Read More</a>
-                        </article>
+                        </article> -->
                     </div>
                 </div>
             </div>
@@ -252,7 +252,7 @@
                     <div class="news-list grid-span-2">
                         <div class="card card--news-list flex flex-cols-1-3">
                             <figure>
-                                <img src="https://cdn.pixabay.com/photo/2021/06/13/07/33/mountain-pass-6332476_960_720.jpg" alt="">
+                                <img src="{{URL::asset('adminn/assets/img/default-avatar.png')}}" alt="">
                             </figure>
                             <article>
                                 <h3>Remittance equal to annual budget</h3>
@@ -263,7 +263,7 @@
                         </div>
                         <div class="card card--news-list flex flex-cols-1-3">
                             <figure>
-                                <img src="https://cdn.pixabay.com/photo/2021/06/13/07/33/mountain-pass-6332476_960_720.jpg" alt="">
+                                <img src="{{URL::asset('adminn/assets/img/default-avatar.png')}}"  alt="">
                             </figure>
                             <article>
                                 <h3>Remittance equal to annual budget</h3>
@@ -274,7 +274,7 @@
                         </div>
                         <div class="card card--news-list flex flex-cols-1-3">
                             <figure>
-                                <img src="https://cdn.pixabay.com/photo/2021/06/13/07/33/mountain-pass-6332476_960_720.jpg" alt="">
+                                <img src="{{URL::asset('adminn/assets/img/default-avatar.png')}}" alt="">
                             </figure>
                             <article>
                                 <h3>Remittance equal to annual budget</h3>
