@@ -21,6 +21,19 @@ $(document).ready( function () {
     $('#datepicker').datepicker({
         format: 'dd-mm-yyyy',
         startDate: '+1d'
-    });      
+    });
+    
+    $('#registerModal').hide();
+    $('#registerBtn').click(function(){
+        // console.log('it is working');
+        // $(this).hide();
+        $('#registerModal').slideToggle();
+        $('#registerModal').addClass('active-modal');
+        
+    })
+    $('#closeRegister').click(function() { 
+        $('#registerModal').slideToggle()
+        $('#registerModal').removeClass('active-modal');
+    })
 })
 

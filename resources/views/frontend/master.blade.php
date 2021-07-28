@@ -29,15 +29,8 @@
                             <i class="fa fa-bars"></i>
                         </button>
                         <nav class="menu-wrapper invisible  text-right">
-
-                            <ul class="list-reset list-horizontal  bg-primary">
-                                <li class="{{$title == 'Committee' ? 'active' : ''}}"><a href="/committee">Committee</a></li>
-                                <li class="{{$title == 'Message' ? 'active' : ''}}"><a href="/central_bank_message">Message From Central Bank</a></li>
-                                <li><a href="/remmitance_overview">Remittance Overview in Nepal</a></li>
-                            </ul>
-                            <ul class="menu list-reset md-list-horizontal pos-abs md-visible md-pos-static flex-content-end bg-primary" >
+                            <ul class="menu list-reset md-list-horizontal pos-abs md-visible md-pos-static flex-content-end bg-menu" >
                                 <li class="{{$title == 'Home' ? 'active' : ''}}"><a href="/">Home</a></li>
-                                <li class="{{$title == 'Gallery' ? 'active' : ''}}"><a href="/gallery">Gallery</a></li>
                                 <li class="{{$title == 'Acts' ? 'active' : ''}}"><a href="/acts_and_regulations">Acts & Regulations</a></li>
                                 <li class="{{$title == 'News' ? 'active' : ''}}"><a href="/news_and_update">News & Update</a></li>
                                 <li class="{{$title == 'Member' ? 'active' : ''}}"><a href="{{route('welcome.member')}}">Members</a></li>
@@ -71,12 +64,38 @@
                         <h2 class="text-white">Become NRA Member</h2>
                     </article>
                     <article class="bg-third pa-20 text-center">
-                        <a href="#" class="btn btn-white btn-outline text-white">Register Now</a>
+                        <button type="button" class="btn btn-white btn-outline text-white" id="registerBtn">Register Now</button>
                     </article>
                 </div>
             </div>
         </section>
         <!-- Subscribe end -->
+
+        <!-- Register Modal start -->
+        <section class="modal" id="registerModal">
+            <div class="container">
+                <div class="modal-content max-w-75">
+                    <h2 class="text-white">Register Now</h2>
+                    <button id="closeRegister" class="close">&times;</button>
+                    <form action="">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name *">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email *">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Contact *">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Address *">
+                        </div>
+                        <button class="btn btn-outline-white pill">Register <i class="fa fa-long-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- Register Modal end -->
 
         <!-- Client start -->
         <section class="client section-padding-50">
@@ -108,21 +127,35 @@
                 <div class="grid grid-cols-3 grid-gap-30">
                     <div class="logo-wrapper">
                         <!-- <img src="" alt=""> -->
-                        <div>Logo Here</div>
+                        <div>
+                            <a href="/"><img class="logo" src="http://nra.org.np/assets/image/nra-logo.png" height="100px"></a>
+                        </div>
                     </div>
-                    <div class="address-wrapper">
-                        <h3>Address</h3>
-                        <p><i class="fa fa-map-marker"></i> <span>Kamalpokhari, Kathmandu, Nepal</span></p>
-                        <p><i class="fa fa-phone"></i> <span>+977-1-4433166</span></p>
-                        <p><i class="fa fa-envelope"></i> <span>contact@nra.org.np</span></p>
-                    </div>
-                    <div class="social-links">
-                        <h3>Get In Touch</h3>
-                        <ul class="social-list list-horizontal">
-                            <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                    <div class="menu-link">
+                        <h3>Menu Links</h3>
+                        <ul class="list-reset">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="#">Downloads</a></li>
+                            <li><a href="/central_bank_message">Message From Central Bank</a></li>
+                            <li><a href="/remmitance_overview">Remittance Overview in Nepal</a></li>
+                            <li><a href="/team">Members</a></li>
                         </ul>
+                    </div>
+                    <div>
+                        <div class="address-wrapper">
+                            <h3>Address</h3>
+                            <p><i class="fa fa-map-marker"></i> <span>Kamalpokhari, Kathmandu, Nepal</span></p>
+                            <p><i class="fa fa-phone"></i> <span>+977-1-4433166</span></p>
+                            <p><i class="fa fa-envelope"></i> <span>contact@nra.org.np</span></p>
+                        </div>
+                        <div class="social-links">
+                            <h3>Get In Touch</h3>
+                            <ul class="social-list list-horizontal">
+                                <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="text-center footer__bottom">

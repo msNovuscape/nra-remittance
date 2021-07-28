@@ -25,11 +25,8 @@
         <!-- Banner end -->
 
         <!-- features start -->
-        <section class="feature section-padding-50">
+        <!-- <section class="feature section-padding-50">
             <div class="container">
-                <!-- <article class="section__header">
-                    <h2>Feature</h2>
-                </article> -->
                 <div class="grid grid-cols-5 grid-gap-30">
                     <div class="card card--feature feature-first-card">
                         <article class="card__body card--feature__body">
@@ -81,11 +78,11 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- features end -->
 
         <!-- Ad start -->
-        <section class="ad">
+        <!-- <section class="ad">
             <div class="container">
                 <div class="grid grid-cols-2 grid-gap-10">
                     <figure class="ad__box">
@@ -96,16 +93,16 @@
                     </figure>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- Ad end -->
 
         <!-- article start -->
-        <section class="article section-padding-50">
+        <section class="article home-article section-padding-50">
             <div class="container">
-                <div class="grid grid-cols-2 grid-gap-30 article-wrapper bg-light-grey">
+                <div class="grid grid-cols-2-1 grid-gap-30 article-wrapper bg-light-grey">
                     <article>
-                        <h2>We Give Exchange</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consequatur necessitatibus voluptatum tempora odit corporis?</p>
+                        <h2>Message From President</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil earum laborum, odio vero unde assumenda. Eligendi modi porro earum quasi, quas consectetur unde suscipit similique fuga nisi eum pariatur voluptas?</p>
                         <a href="#" class="btn btn-outline-third pill">Read More <i class="fa fa-long-arrow-right"></i></a>
                     </article>
                     <figure>

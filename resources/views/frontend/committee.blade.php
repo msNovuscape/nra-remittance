@@ -3,11 +3,58 @@
 @section('content')
     <section class="innerpage section-padding-50 committee">
         <div class="container">
-            <h1>Committee</h1>
-            <article class="innerpage-article-content">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis officiis voluptas animi aut aliquid quo voluptatem cumque blanditiis sed aspernatur, dolor aliquam nemo ea inventore, illum necessitatibus in illo odio!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis officiis voluptas animi aut aliquid quo voluptatem cumque blanditiis sed aspernatur, dolor aliquam nemo ea inventore, illum necessitatibus in illo odio! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam necessitatibus id eaque, incidunt temporibus nemo iste perspiciatis repellat quibusdam. Dolorum laboriosam, recusandae error magni id voluptas quasi provident delectus minus!</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis officiis voluptas animi aut aliquid quo voluptatem cumque blanditiis sed aspernatur, dolor aliquam nemo ea inventore, illum necessitatibus in illo odio!</p>
+            <h1>Members</h1>
+            <article class="innerpage-article-content table-data-content">
+                <div class="table-responsive">
+                    <table class="table bg-secondary th-border">
+                        <thead>
+                            <tr>
+                                <th>S.N.</th>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Contact</th>
+                                <th>Visit Website</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Sreejan</td>
+                                <td>Nepal</td>
+                                <td>9811111111</td>
+                                <td><a href="#!" target="_blank">Link Here</a></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Sreejan</td>
+                                <td>Nepal</td>
+                                <td>9811111111</td>
+                                <td><a href="#!" target="_blank">Link Here</a></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Sreejan</td>
+                                <td>Nepal</td>
+                                <td>9811111111</td>
+                                <td><a href="#!" target="_blank">Link Here</a></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Sreejan</td>
+                                <td>Nepal</td>
+                                <td>9811111111</td>
+                                <td><a href="#!" target="_blank">Link Here</a></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Sreejan</td>
+                                <td>Nepal</td>
+                                <td>9811111111</td>
+                                <td><a href="#!" target="_blank">Link Here</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </article>
         </div>
     </section>

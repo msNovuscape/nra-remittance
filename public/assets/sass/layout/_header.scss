@@ -37,7 +37,6 @@
         ul:first-of-type {
             max-width: max-content;
             margin-left: auto;
-            margin-bottom: 2rem;
 
             li.active > a, li a:hover {
                 @extend .bg-third;
@@ -138,7 +137,7 @@
             align-items: center;
             justify-content: center;
 
-            .menu + li + li {
+            .menu li + li {
                 border-top: none !important;
             }
 
@@ -185,6 +184,7 @@
                 }
             }
         }
+
     }
 
     @include mq(desktop, map($mq, sm)) {
@@ -198,9 +198,40 @@
     }
 
     @include mq(mobile, map($mq, lg)) {
+        .grid {
+            align-items: center;
+        }
         .menu-wrapper.invisible {
             visibility: visible;
             opacity: 1;
+        }
+
+        .has-dropdown {
+            position: relative;
+
+            .dropdown-menu {
+                min-width: max-content;
+                max-width: max-content;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                display: none;
+            }
+
+            &:hover {
+                .dropdown-menu {
+                    display: block;
+                }
+            }
+        }
+        
+        .menu {
+            overflow: visible;
+            margin-bottom: 0;
+            li + li {
+                border: none !important;
+                margin-top: 0;
+            }
         }
     }
 }
