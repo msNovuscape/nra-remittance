@@ -23,8 +23,8 @@
                     <div class="grid grid-cols-2 gird-gap-30">
                         <div class="logo-wrapper ">
                             <a href="/" class="flex flex-wrap flex-row flex-items-start w-full">
-                                <div class="logo text-left">Nepal Remitters Association</div>
-                                <img class="" logo"="" src="http://nra.org.np/assets/image/nra-logo.png" height="100px">
+                                <!-- <div class="logo text-left">Nepal Remitters Association</div> -->
+                                <img class="logo" src="http://nra.org.np/assets/image/nra-logo.png" height="100px">
                             </a>
                         </div>
                         <button class="menu-trigger-btn">

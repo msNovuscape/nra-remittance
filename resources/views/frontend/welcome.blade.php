@@ -12,12 +12,12 @@
                         </article>
                     </div>
                     <div class="hero-banner-slider-item pos-rel">
-                        <img src="https://cdn.pixabay.com/photo/2021/06/13/07/33/mountain-pass-6332476_960_720.jpg" alt="banner img">
-                        <article class="max-w-40 pos-abs">
+                        <img src="http://nra.org.np/assets/image/nra_cover1.jpg" alt="banner img">
+                        <!-- <article class="max-w-40 pos-abs">
                             <h1 class="text-white">Banner Title</h1>
                             <p class="text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore, placeat unde eum commodi quam tempora dignissimos suscipit delectus maxime ipsam?</p>
                             <a href="#" class="btn btn-white btn-outline rounded text-white">Read More</a>
-                        </article>
+                        </article> -->
                     </div>
                 </div>
             </div>
