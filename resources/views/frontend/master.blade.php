@@ -24,7 +24,7 @@
                         <div class="logo-wrapper ">
                             <a href="/" class="flex flex-wrap flex-row flex-items-start w-full">
                                 <!-- <div class="logo text-left">Nepal Remitters Association</div> -->
-                                <img class="logo" src="http://nra.org.np/assets/image/nra-logo.png" height="100px">
+                                <img class="logo" src="http://nra.org.np/assets/image/nra-logo.png">
                             </a>
                         </div>
                         <button class="menu-trigger-btn">
