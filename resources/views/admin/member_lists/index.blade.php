@@ -72,7 +72,7 @@
                       </th>
                     </thead>
                     <tbody>
-                      @foreach($member_lists as $member_list)
+                     @foreach($member_lists as $member_list)
                       <tr>
                           <td>
                             {{$member_list->first_name .' '. $member_list->last_name}}
