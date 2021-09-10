@@ -1,3 +1,5 @@
+// const { Dropdown } = require("bootstrap");
+
 $(document).ready( function () {
     
     $('.hero-banner-slider').slick({
@@ -17,6 +19,16 @@ $(document).ready( function () {
         $('.header .menu-wrapper').toggleClass('invisible');
     })
 
+    function dropDownMenuResponsive() {
+        let dropTrigger = $('.header .menu-wrapper .menu .has-dropdown .fa'),
+            dropMenu = $('.dropdown-menu');
+        
+        dropTrigger.click(function() {
+            $(this).toggleClass('clicked');
+            $(this).parents().siblings('.dropdown-menu').slideToggle();
+        })
+    }
+    dropDownMenuResponsive();
     
     $('#datepicker').datepicker({
         format: 'dd-mm-yyyy',
@@ -36,4 +48,3 @@ $(document).ready( function () {
         $('#registerModal').removeClass('active-modal');
     })
 })
-

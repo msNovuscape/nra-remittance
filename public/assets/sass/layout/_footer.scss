@@ -24,6 +24,11 @@
     .logo-wrapper {
         font-size: 2rem;
     }
+    img.logo {
+        object-fit: unset;
+        width: 100%;
+        height: auto;
+    }
     li, a, p, span, h3, div {
         @extend .text-primary;
     }
@@ -54,5 +59,9 @@
         right: 0;
         @extend .bg-white;
         z-index: 1;
+
+        @media screen and (max-width: 991px) {
+            height: 98%;
+        }
     }
 }
