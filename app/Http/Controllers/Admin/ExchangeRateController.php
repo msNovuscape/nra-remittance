@@ -31,7 +31,9 @@ class ExchangeRateController extends Controller
         $date = $dateTime->toDateString();
        
         $exchange_rates = ExchangeRate::whereDate('created_at',$date)->get();
-       return view('admin.exchange_rates.index',['title' => $this->title,'route' => $this->route],compact('exchange_rates','date'));
+        $first_exchange_rates = $exchange_rates->where('time','10am');
+        $last_exchange_rates = $exchange_rates->where('time','2pm');    
+       return view('admin.exchange_rates.index',['title' => $this->title,'route' => $this->route],compact('first_exchange_rates','last_exchange_rates','date'));
         
     }
 
@@ -45,6 +47,7 @@ class ExchangeRateController extends Controller
             'currency' => $request['currency'],
             'buying_rate' => $request['buying_rate'],
             'selling_rate' => $request['selling_rate'],
+            'time'         => $request['time'],
             
         ]);
         
@@ -73,6 +76,7 @@ class ExchangeRateController extends Controller
         $exchange_rate->currency = $request->currency;
         $exchange_rate->buying_rate = $request->buying_rate;
         $exchange_rate->selling_rate = $request->selling_rate;
+        $exchange_rate->time = $request->time;
         $exchange_rate->save();
         $request->session()->flash('alert-success', 'Exchange Rate was successful updated!');
         return redirect('/admin/exchange_rates');
@@ -84,10 +88,10 @@ class ExchangeRateController extends Controller
     {
         $date = $request->get('date');
         $exchange_rates = ExchangeRate::whereDate('created_at',$date)->get();
+        $first_exchange_rates = $exchange_rates->where('time','10am');
+        $last_exchange_rates = $exchange_rates->where('time','2pm');    
         
-        if($exchange_rates){
-            return view('admin.exchange_rates.index',['title' => $this->title,'route' => $this->route],compact('exchange_rates','date'));
-        }
+            return view('admin.exchange_rates.index',['title' => $this->title,'route' => $this->route],compact('first_exchange_rates','last_exchange_rates','date'));
     }
 
     public function delete_exchange_rate(){

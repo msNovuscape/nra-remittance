@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Core CSS Links -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
 </head>
 <body>
     <div class="site-wrapper">
@@ -117,7 +117,12 @@
         <section class="client section-padding-50">
             <div class="container">
                 <div class="grid grid-cols-5 grid-gap-15">
+                    @foreach(App\Partner::where('status',true)->get() as $partner)
                     <figure class="client__img">
+                        <img src="{{ asset( 'storage/' . $partner->image_path ) }}" alt="client logo" class="circle">
+                    </figure>
+                    @endforeach
+                    <!-- <figure class="client__img">
                         <img src="https://www.logodesign.net/logo/arrow-graph-and-globe-stand-4275ld.png" alt="client logo" class="circle">
                     </figure>
                     <figure class="client__img">
@@ -131,7 +136,8 @@
                     </figure>
                     <figure class="client__img">
                         <img src="https://www.logodesign.net/logo/arrow-graph-and-globe-stand-4275ld.png" alt="client logo" class="circle">
-                    </figure>
+                    </figure> -->
+                    
                 </div>
             </div>
         </section>
@@ -192,6 +198,6 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
-    <script src="assets/js/core.js"></script>
+    <script src="{{URL::asset('assets/js/core.js')}}"></script>
 </body>
 </html>

@@ -45,6 +45,21 @@
                   <div class="row">
                     <div class="col-md-6 pr-1">
                       <div class="form-group">
+                        <input type="radio" name = "time"  id = "10am" value = "10am"  required>
+
+                        <label for = "10am" >10am</label>
+
+                        <input type="radio" name = "time"  id = "2pm" value = "2pm"  required>
+
+                        <label for = "2pm" >2pm</label>
+
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
                       <label>Currency</label>
                         <input type="text" name = "currency" class="form-control" placeholder="Currency" required>
                         

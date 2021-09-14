@@ -101,6 +101,12 @@
               <p>Message from central bank</p>
             </a>
           </li>
+          <li class = {{$title == 'Partner' ? 'active' : ''}}>
+            <a href="{{route('get_partners')}}">
+            <i class="fas fa-envelope"></i>
+              <p>Partners</p>
+            </a>
+          </li>
           <li class = {{$title == 'Change Password' ? 'active' : ''}}>
             <a href="{{route('change_password')}}">
               <i class="now-ui-icons text_caps-small"></i>

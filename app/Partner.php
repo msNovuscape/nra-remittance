@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ExchangeRate extends Model
+class Partner extends Model
 {
     protected $fillable = [
-        'currency', 'buying_rate', 'selling_rate','time',
+        'name', 'address', 'image_path', 'status'
     ];
 }

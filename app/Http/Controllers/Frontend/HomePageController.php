@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Gallery;
 use Carbon;
+use App\ExchangeRate;
+use App\ExecutiveCommittee;
+use App\Partner;
+use App\NewsAndUpdate;
 
 class HomePageController extends Controller
 {
@@ -27,8 +31,16 @@ class HomePageController extends Controller
     {
         
         $title = "Home";
-        
-       return view('frontend.welcome',['title' => $title]);
+        $dateTime = Carbon\Carbon::now();
+        $date = $dateTime->toDateString();
+       
+        $exchange_rates = ExchangeRate::whereDate('created_at',$date)->get();
+        $first_exchange_rates = $exchange_rates->where('time','10am');
+        $last_exchange_rates = $exchange_rates->where('time','2pm');
+        $partners = Partner::where('status',true)->orderBy('id','desc')->get();
+        $news = NewsAndUpdate::where('status',true)->orderBy('id','desc')->get();
+        $executive_committees = ExecutiveCommittee::where('status',true)->get();
+       return view('frontend.welcome',compact('title','first_exchange_rates','last_exchange_rates','date','executive_committees','partners','news'));
         
     }
 
@@ -149,6 +161,15 @@ class HomePageController extends Controller
         $gallery->delete();
         $request->session()->flash('alert-success', 'Gallery was successful deleted!');
         return redirect('/admin/get_gallery');
+
+    }
+    public function search(Request $request){
+        
+        $date = Carbon\Carbon::parse($request->date)->format('Y/m/d');
+        $exchange_rates = ExchangeRate::whereDate('created_at',$date)->get();
+        $first_exchange_rates = $exchange_rates->where('time','10am');
+        $last_exchange_rates = $exchange_rates->where('time','2pm');    
+        return response()->json(['first_exchange_rates' => $first_exchange_rates,'last_exchange_rates' => $last_exchange_rates,'date' => $date]);        
 
     }
 }

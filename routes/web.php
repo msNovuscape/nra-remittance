@@ -29,6 +29,8 @@ Route::group(['middleware' => 'guest'], function(){
     Route::get('/news_and_update','Frontend\HomePageController@news_and_update')->name('welcome.news_and_update');
     Route::get('/committee','Frontend\HomePageController@committee')->name('welcome.committee');
     Route::get('/member','Frontend\HomePageController@member')->name('welcome.member');
+    Route::get('/search','Frontend\HomePageController@search')->name('welcome.search');
+
 
 
 
@@ -101,6 +103,14 @@ Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function()
     Route::get('message','Admin\CentralBankMessageController@edit_message')->name('edit_message');
     Route::post('update_message','Admin\CentralBankMessageController@update_message')->name('update_message');
     Route::get('delete_message','Admin\CentralBankMessageController@delete_message')->name('delete_message');
+
+    //Partner Rote
+    Route::get('partners','Admin\PartnerController@get_partner')->name('get_partners');
+    Route::get('add_partner','Admin\PartnerController@add_partner')->name('add_partner');
+    Route::post('post_partner','Admin\PartnerController@post_partner')->name('post_partner');
+    Route::get('partner','Admin\PartnerController@edit_partner')->name('edit_partner');
+    Route::post('update_partner','Admin\PartnerController@update_partner')->name('update_partner');
+    Route::get('delete_partner','Admin\PartnerController@delete_partner')->name('delete_partner');
 
     //Change Password Route
     Route::get('change_password','Admin\LoginController@change_password')->name('change_password');

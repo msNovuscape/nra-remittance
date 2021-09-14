@@ -114,7 +114,7 @@
         <!-- article end -->
         
         <!-- Ad start -->
-        <section class="ad">
+        <!-- <section class="ad">
             <div class="container">
                 <div class="grid grid-cols-2 grid-gap-10">
                     <figure class="ad__box">
@@ -125,23 +125,23 @@
                     </figure>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- Ad end -->
 
         <!-- table start -->
         <section class="table-data section-padding-50">
             <div class="container">
-                <form action="" class="exchange-rate">
+                <form action="{{route('welcome.search')}}" class="exchange-rate">
                     <div class="grid grid-cols-2-1 grid-gap-30">
                         <h2 class="text-right">Today's Exchange Rate</h2>
-                        <input placeholder="Choose date" type="text" name="checkIn" id="datepicker" value="" class="calendar"><i class="fa fa-calendar icon"></i>
+                        <input placeholder="Choose date" type="text" name="date" id="datepicker" value="{{$date}}" route = "{{route('welcome.search')}}" class="calendar"><i class="fa fa-calendar icon"></i>
                     </div>
                 </form>
                 <div class="grid grid-cols-2 grid-gap-30">
                     <div class="table-data-content bg-secondary">
                         <article class="text-center">
                             <h2>10 AM Exchange Rate</h2>
-                            <p><span class="section-date">June-21-2021</span></p>
+                            <p><span class="section-date" id = "10amDate">{{Carbon\Carbon::now()->toDateString()}}</span></p>
                         </article>
                         <div class="table-responsive">
                             <table class="table bg-secondary th-border">
@@ -153,31 +153,21 @@
                                         <th>Selling Rate</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id = "10amBody">
+
+                                    @forelse($first_exchange_rates as $first_exchange_rate)
                                     <tr>
-                                        <td>USD</td>
+                                        <td>{{$first_exchange_rate->currency}}</td>
                                         <td>1</td>
-                                        <td>103</td>
-                                        <td>105</td>
+                                        <td>{{$first_exchange_rate->buying_rate}}</td>
+                                        <td>{{$first_exchange_rate->selling_rate}}</td>
                                     </tr>
+                                    @empty
                                     <tr>
-                                        <td>AUS</td>
-                                        <td>1</td>
-                                        <td>89</td>
-                                        <td>90</td>
+                                        <td>Data not available.</td>
                                     </tr>
-                                    <tr>
-                                        <td>EUR</td>
-                                        <td>1</td>
-                                        <td>79</td>
-                                        <td>80</td>
-                                    </tr>
-                                    <tr>
-                                        <td>CAD</td>
-                                        <td>1</td>
-                                        <td>96</td>
-                                        <td>98</td>
-                                    </tr>
+                                    @endforelse
+                                    
                                 </tbody>
                             </table>
                         </div>
@@ -185,7 +175,7 @@
                     <div class="table-data-content bg-secondary">
                         <article class="text-center">
                             <h2>2 PM Exchange Rate</h2>
-                            <p><span class="section-date">June-21-2021</span></p>
+                            <p><span class="section-date" id = "2pmDate">{{Carbon\Carbon::now()->toDateString()}}</span></p>
                         </article>
                         <div class="table-responsive">
                             <table class="table bg-secondary th-bg-third">
@@ -197,31 +187,20 @@
                                         <th>Selling Rate</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                     <tr>
-                                        <td>USD</td>
-                                        <td>1</td>
-                                        <td>103</td>
-                                        <td>105</td>
-                                    </tr>
+                                <tbody id = "2pmBody">
+                                @forelse($last_exchange_rates as $last_exchange_rate)
                                     <tr>
-                                        <td>AUS</td>
+                                        <td>{{$last_exchange_rate->currency}}</td>
                                         <td>1</td>
-                                        <td>89</td>
-                                        <td>90</td>
+                                        <td>{{$last_exchange_rate->buying_rate}}</td>
+                                        <td>{{$last_exchange_rate->selling_rate}}</td>
                                     </tr>
+                                    @empty
                                     <tr>
-                                        <td>EUR</td>
-                                        <td>1</td>
-                                        <td>79</td>
-                                        <td>80</td>
+                                        <td>Data not available.</td>
                                     </tr>
-                                    <tr>
-                                        <td>CAD</td>
-                                        <td>1</td>
-                                        <td>96</td>
-                                        <td>98</td>
-                                    </tr>
+                                    @endforelse
+                                    
                                 </tbody>
                             </table>
                         </div>
@@ -238,30 +217,42 @@
                     <h2>News</h2>
                 </article>
                 <div class="grid grid-cols-3 grid-gap-30">
+                @if($news->isNotEmpty())
                     <div class="card card--img-cover card--news pos-rel">
                         <figure class="pos-rel">
-                            <img src="https://cdn.pixabay.com/photo/2021/06/13/07/33/mountain-pass-6332476_960_720.jpg" alt="">
+                            <img src="{{ asset( 'storage/' . $news->first()->image_path ) }}" alt="Image unavailable">
                         </figure>
                         <article class="pos-abs">
-                            <h3>Remittance equal to annual budget</h3>
-                            <div class="card__meta-date">June-21-2021</div>
-                            <p>Remittance income of the country in the current fiscal year will be almost equal to the annual budget of Nepal......</p>
+                            <h3>{{$news->first()->title}}</h3>
+                            <div class="card__meta-date">{{ $news->first()->created_at->format('M j, Y') }}</div>
+                            <p>{{str_limit(strip_tags($news->first()->description), 110)}}</p>
+                            @if (strlen(strip_tags($news->first()->description)) > 110)
                             <a href="#" class="btn btn-white btn-outline text-white pill">Read More <i class="fa fa-long-arrow-right"></i></a>
+                            @endif
                         </article>
                     </div>
+                    @endif
                     <div class="news-list grid-span-2">
+                        @foreach($news as $new)
+                            @if(!$loop->first)
                         <div class="card card--news-list flex flex-cols-1-3">
                             <figure>
-                                <img src="{{URL::asset('adminn/assets/img/default-avatar.png')}}" alt="">
+                                <img src="{{ asset( 'storage/' . $new->image_path ) }}" alt="">
                             </figure>
                             <article>
-                                <h3>Remittance equal to annual budget</h3>
-                                <div class="card__meta-date">June-21-2021</div>
-                                <p>Remittance income of the country in the current fiscal year will be almost equal to the annual budget of Nepal......</p>
+                                <h3>{{$new->title}}</h3>
+                                <div class="card__meta-date">{{ $new->created_at->format('M j, Y') }}</div>
+                                
+            
+                                <p>{{ str_limit(strip_tags($new->description), 110) }}</p>
+                                @if (strlen(strip_tags($new->description)) > 110)
                                 <a href="#" class="btn btn-outline-third pill">Read More <i class="fa fa-long-arrow-right"></i></a>
+                                @endif
                             </article>
                         </div>
-                        <div class="card card--news-list flex flex-cols-1-3">
+                        @endif
+                        @endforeach
+                        <!-- <div class="card card--news-list flex flex-cols-1-3">
                             <figure>
                                 <img src="{{URL::asset('adminn/assets/img/default-avatar.png')}}"  alt="">
                             </figure>
@@ -282,7 +273,7 @@
                                 <p>Remittance income of the country in the current fiscal year will be almost equal to the annual budget of Nepal......</p>
                                 <a href="#" class="btn btn-outline-third pill">Read More <i class="fa fa-long-arrow-right"></i></a>
                             </article>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -296,7 +287,21 @@
                     <h2>OFFICE BEARERS</h2>
                 </article>
                 <div class="grid grid-cols-3 grid-gap-30">
-                    <div class="card card--team">
+                    @foreach($executive_committees as $executive_committee)
+                        <div class="card card--team">
+                            <figure class="card__img">
+                                <img src="{{ asset( 'storage/' . $executive_committee->image_path ) }}" class="circle" alt="Image unavailable">
+                            </figure>
+                            <article class="card__body text-center">
+                                <h3>{{$executive_committee->first_name}} {{$executive_committee->last_name}}</h3>
+                                <div class="card__meta flex flex-content-between">
+                                    <div class="card__meta-designation">Designation <br> <span class="text">{{$executive_committee->designation}}</span></div>
+                                    <div class="card__meta-designation">Location <br> <span class="text">{{$executive_committee->address}},{{$executive_committee->city}},{{$executive_committee->country}}</span></div>
+                                </div>
+                            </article>
+                        </div>
+                    @endforeach
+                    <!-- <div class="card card--team">
                         <figure class="card__img">
                             <img src="https://randomuser.me/api/portraits/men/32.jpg" class="circle" alt="team">
                         </figure>
@@ -319,19 +324,7 @@
                                 <div class="card__meta-designation">Location <br> <span class="text">Koteshwor, Kathmandu, Nepal</span></div>
                             </div>
                         </article>
-                    </div>
-                    <div class="card card--team">
-                        <figure class="card__img">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="circle" alt="team">
-                        </figure>
-                        <article class="card__body text-center">
-                            <h3>Name Here</h3>
-                            <div class="card__meta flex flex-content-between">
-                                <div class="card__meta-designation">Designation <br> <span class="text">Project Manager</span></div>
-                                <div class="card__meta-designation">Location <br> <span class="text">Koteshwor, Kathmandu, Nepal</span></div>
-                            </div>
-                        </article>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>

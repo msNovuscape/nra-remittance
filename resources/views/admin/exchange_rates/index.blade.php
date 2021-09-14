@@ -55,10 +55,10 @@
     @endforeach
   </div> <!-- end .flash-message -->
               <div class="card-header">
-                <h4 class="card-title"> {{$title}}</h4>
-                <div  class="col-md-2" style = "margin-left:85%">
+                <h4 class="card-title"> {{$title}}(10AM)</h4>
+                <!-- <div  class="col-md-2">
                       <button class="btn btn-primary" onclick="window.location='{{ route("add_exchange_rates")}}'">Add new</button>
-                </div>
+                </div> -->
          
   
              
@@ -83,22 +83,22 @@
                       </th>
                     </thead>
                     <tbody>
-                    @foreach($exchange_rates as $exchange_rate)
+                    @foreach($first_exchange_rates as $first_exchange_rate)
                     <tr>
                         <td>
-                          {{$exchange_rate->currency}}
+                          {{$first_exchange_rate->currency}}
                         </td>
                         <td>
                         1
                         </td>
                         <td>
-                        {{$exchange_rate->buying_rate}}
+                        {{$first_exchange_rate->buying_rate}}
                         </td>
                         <td>
-                        {{$exchange_rate->selling_rate}}
+                        {{$first_exchange_rate->selling_rate}}
                         </td>
                         <td class="text-right">
-                        <a  href="{{route('edit_exchange_rate',['id' => $exchange_rate->id])}}"><i data-toggle="tooltip" data-placement="top" title="Edit" class="far fa-edit"></i></a>&nbsp;&nbsp;<a onclick="return confirm('Are you sure to delete this item?')" href = "{{route('delete_exchange_rate',['id' => $exchange_rate->id])}}"><i data-toggle="tooltip" data-placement="top" title="Delete" class="far fa-trash-alt"></i></a>
+                        <a  href="{{route('edit_exchange_rate',['id' => $first_exchange_rate->id])}}"><i data-toggle="tooltip" data-placement="top" title="Edit" class="far fa-edit"></i></a>&nbsp;&nbsp;<a onclick="return confirm('Are you sure to delete this item?')" href = "{{route('delete_exchange_rate',['id' => $first_exchange_rate->id])}}"><i data-toggle="tooltip" data-placement="top" title="Delete" class="far fa-trash-alt"></i></a>
                         </td>
                       </tr>
                     @endforeach
@@ -114,6 +114,65 @@
           
         </div>
       </div>
+      <div class="card">
+      
+              <div class="card-header">
+                <h4 class="card-title"> {{$title}}(2PM)</h4>
+                <!-- <div  class="col-md-2">
+                      <button class="btn btn-primary" onclick="window.location='{{ route("add_exchange_rates")}}'">Add new</button>
+                </div> -->
+         
+  
+             
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead class=" text-primary">
+                      <th>
+                        Currency
+                      </th>
+                      <th>
+                        Unit
+                      </th>
+                      <th>
+                        Buying Rate
+                      </th>
+                      <th>
+                        Selling Rate
+                      </th>
+                      <th class="text-right">
+                        Action
+                      </th>
+                    </thead>
+                    <tbody>
+                    @foreach($last_exchange_rates as $last_exchange_rate)
+                    <tr>
+                        <td>
+                          {{$last_exchange_rate->currency}}
+                        </td>
+                        <td>
+                        1
+                        </td>
+                        <td>
+                        {{$last_exchange_rate->buying_rate}}
+                        </td>
+                        <td>
+                        {{$last_exchange_rate->selling_rate}}
+                        </td>
+                        <td class="text-right">
+                        <a  href="{{route('edit_exchange_rate',['id' => $last_exchange_rate->id])}}"><i data-toggle="tooltip" data-placement="top" title="Edit" class="far fa-edit"></i></a>&nbsp;&nbsp;<a onclick="return confirm('Are you sure to delete this item?')" href = "{{route('delete_exchange_rate',['id' => $last_exchange_rate->id])}}"><i data-toggle="tooltip" data-placement="top" title="Delete" class="far fa-trash-alt"></i></a>
+                        </td>
+                      </tr>
+                    @endforeach
+                      
+                      
+                    
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
 @endsection
 @section('script')
 <script>
