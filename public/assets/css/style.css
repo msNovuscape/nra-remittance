@@ -216,6 +216,10 @@ h3 {
 .card--team img {
   margin: 0 auto;
   display: block;
+  width: 200px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .card--team .card__img {
@@ -618,6 +622,7 @@ h3 {
       -ms-flex-order: 2;
           order: 2;
   padding-left: 15px;
+  max-width: 260px;
 }
 
 @media screen and (max-width: 1170px) {
@@ -647,12 +652,6 @@ h3 {
   max-width: -moz-max-content;
   max-width: max-content;
   margin-left: auto;
-}
-
-@media screen and (min-width: 1170px) {
-  .header .top-bar {
-    padding: 10px 0;
-  }
 }
 
 .header .menu {
@@ -884,6 +883,10 @@ h3 {
   }
 }
 
+.hero-banner-slider {
+  margin-bottom: 0;
+}
+
 .hero-banner-slider-item figure {
   z-index: 1;
 }
@@ -994,6 +997,10 @@ h3 {
 
 .table-data .exchange-rate {
   margin-bottom: 40px;
+}
+
+.table-data .exchange-rate h2 {
+  margin-bottom: 0 !important;
 }
 
 .table-data .grid {
@@ -1174,6 +1181,15 @@ h3 {
 .article.home-article .grid-cols-2-1 {
   -ms-grid-columns: 2fr 1.3fr;
       grid-template-columns: 2fr 1.3fr;
+}
+
+.news .card--img-cover figure .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .news .grid-cols-3 {
@@ -1654,8 +1670,12 @@ figure + .innerpage-article-content {
   max-width: 40%;
 }
 
-.section-padding-50, .innerpage + .subscribe {
-  padding: 50px 0;
+.section-padding-50, .innerpage + .subscribe, .ad {
+  padding: 70px 0 0;
+}
+
+.section-padding-50 .container > article h2, .innerpage + .subscribe .container > article h2, .ad .container > article h2 {
+  margin-bottom: 40px;
 }
 
 .article-wrapper {

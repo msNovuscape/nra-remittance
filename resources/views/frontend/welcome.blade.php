@@ -241,6 +241,7 @@
                     <div class="card card--img-cover card--news pos-rel">
                         <figure class="pos-rel">
                             <img src="https://cdn.pixabay.com/photo/2021/06/13/07/33/mountain-pass-6332476_960_720.jpg" alt="">
+                            <div class="pos-abs overlay"></div>
                         </figure>
                         <article class="pos-abs">
                             <h3>Remittance equal to annual budget</h3>
