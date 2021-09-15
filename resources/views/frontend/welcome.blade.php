@@ -227,7 +227,7 @@
                             <div class="card__meta-date">{{ $news->first()->created_at->format('M j, Y') }}</div>
                             <p>{{str_limit(strip_tags($news->first()->description), 110)}}</p>
                             @if (strlen(strip_tags($news->first()->description)) > 110)
-                            <a href="#" class="btn btn-white btn-outline text-white pill">Read More <i class="fa fa-long-arrow-right"></i></a>
+                            <a href="{{route('welcome.single_news',['id' => $news->first()->id])}}" class="btn btn-white btn-outline text-white pill">Read More <i class="fa fa-long-arrow-right"></i></a>
                             @endif
                         </article>
                     </div>
@@ -246,7 +246,7 @@
             
                                 <p>{{ str_limit(strip_tags($new->description), 110) }}</p>
                                 @if (strlen(strip_tags($new->description)) > 110)
-                                <a href="#" class="btn btn-outline-third pill">Read More <i class="fa fa-long-arrow-right"></i></a>
+                                <a href="{{route('welcome.single_news',['id' => $new->id])}}" class="btn btn-outline-third pill">Read More <i class="fa fa-long-arrow-right"></i></a>
                                 @endif
                             </article>
                         </div>
