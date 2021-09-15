@@ -1,13 +1,16 @@
-.slick img {
-    width: 100%;
-    // height: 450px;
-    @include mq(mobile, map($mq, lg)) {
-        height: 500px;
-        object-fit: cover;
-    }
-}
-
 .hero-banner-slider {
+    &.slick {
+        overflow: hidden;
+    }
+    &.slick img {
+        width: 100%;
+        // height: 450px;
+        @include mq(mobile, map($mq, lg)) {
+            height: 500px;
+            object-fit: cover;
+        }
+    }
+    margin-bottom: 0 !important;
     &-item {
         figure {
             z-index: 1;

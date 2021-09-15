@@ -73,7 +73,7 @@
         <!-- Banner start -->
         @yield('content')
         <!-- Subscribe start -->
-        <section class="subscribe">
+        <section class="subscribe section-padding-50 bg-light-grey">
             <div class="container">
                 <div class="grid grid-cols-2">
                     <article class="bg-secondary pa-20">
@@ -116,12 +116,19 @@
         <!-- Client start -->
         <section class="client section-padding-50">
             <div class="container">
-                <div class="grid grid-cols-5 grid-gap-15">
-                    @foreach(App\Partner::where('status',true)->get() as $partner)
-                    <figure class="client__img">
-                        <img src="{{ asset( 'storage/' . $partner->image_path ) }}" alt="client logo" class="circle">
-                    </figure>
-                    @endforeach
+                <article>
+                    <h2>Our Member</h2>
+                </article>
+                <!-- <div class="grid grid-cols-5 grid-gap-15"> -->
+                    <div class="slick client-logo-slider">
+                        @foreach(App\Partner::where('status',true)->get() as $partner)
+                        <div>
+                            <figure class="client__img">
+                                <img src="{{ asset( 'storage/' . $partner->image_path ) }}" alt="client logo" class="circle">
+                            </figure>
+                        </div>
+                        @endforeach
+                    </div>
                     <!-- <figure class="client__img">
                         <img src="https://www.logodesign.net/logo/arrow-graph-and-globe-stand-4275ld.png" alt="client logo" class="circle">
                     </figure>
@@ -138,7 +145,7 @@
                         <img src="https://www.logodesign.net/logo/arrow-graph-and-globe-stand-4275ld.png" alt="client logo" class="circle">
                     </figure> -->
                     
-                </div>
+                <!-- </div> -->
             </div>
         </section>
         <!-- Client end -->

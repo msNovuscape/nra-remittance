@@ -129,7 +129,7 @@
         <!-- Ad end -->
 
         <!-- table start -->
-        <section class="table-data section-padding-50">
+        <section class="table-data section-padding-50 bg-light-grey">
             <div class="container">
                 <form action="{{route('welcome.search')}}" class="exchange-rate">
                     <div class="grid grid-cols-2-1 grid-gap-30">
@@ -220,10 +220,17 @@
                 @if($news->isNotEmpty())
                     <div class="card card--img-cover card--news pos-rel">
                         <figure class="pos-rel">
+                        <a href="{{route('welcome.single_news',['id' => $news->first()->id])}}">
                             <img src="{{ asset( 'storage/' . $news->first()->image_path ) }}" alt="Image unavailable">
+                        </a>    
+                            <div class="pos-abs overlay"></div>
                         </figure>
                         <article class="pos-abs">
-                            <h3>{{$news->first()->title}}</h3>
+                            <h3>
+                                <a href="{{route('welcome.single_news',['id' => $news->first()->id])}}">
+                                    {{$news->first()->title}}
+                                </a>
+                            </h3>
                             <div class="card__meta-date">{{ $news->first()->created_at->format('M j, Y') }}</div>
                             <p>{{str_limit(strip_tags($news->first()->description), 110)}}</p>
                             @if (strlen(strip_tags($news->first()->description)) > 110)
@@ -237,10 +244,16 @@
                             @if(!$loop->first)
                         <div class="card card--news-list flex flex-cols-1-3">
                             <figure>
-                                <img src="{{ asset( 'storage/' . $new->image_path ) }}" alt="">
+                                <a href="{{route('welcome.single_news',['id' => $new->id])}}">
+                                    <img src="{{ asset( 'storage/' . $new->image_path ) }}" alt="">
+                                </a>
                             </figure>
                             <article>
-                                <h3>{{$new->title}}</h3>
+                                <h3>
+                                    <a href="{{route('welcome.single_news',['id' => $new->id])}}">
+                                        {{$new->title}}
+                                    </a>
+                                </h3>
                                 <div class="card__meta-date">{{ $new->created_at->format('M j, Y') }}</div>
                                 
             
@@ -281,10 +294,15 @@
         <!-- news-list end -->
 
         <!-- Teams start -->
-        <section class="teams-list section-padding-50">
+        <section class="teams-list section-padding-50 ">
             <div class="container">
                 <article class="section__header">
-                    <h2>OFFICE BEARERS</h2>
+                    <div class="grid grid-cols-2 grid-gap-30">
+                        <h2>OFFICE BEARERS</h2>
+                        <div class="text-md-right">
+                            <a href="{{route('welcome.committee')}}" class="btn btn-outline-third pill" target="_blank">View All <i class="fa fa-long-arrow-right"></i></a>
+                        </div>
+                    </div>
                 </article>
                 <div class="grid grid-cols-3 grid-gap-30">
                     @foreach($executive_committees as $executive_committee)

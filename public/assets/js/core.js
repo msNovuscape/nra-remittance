@@ -14,6 +14,17 @@ $(document).ready( function () {
         prevArrow: `<button type="button" class="slick-prev"><i class="fa fa-angle-left"></i></button>`,
         nextArrow: `<button type="button" class="slick-next"><i class="fa fa-angle-right"></i></button>`,
     });
+    
+    $('.client-logo-slider').slick({
+        dots: true,
+        infinite: false,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        adaptiveHeight: true,
+        autoplay: true,
+        prevArrow: `<button type="button" class="slick-prev"><i class="fa fa-angle-left"></i></button>`,
+        nextArrow: `<button type="button" class="slick-next"><i class="fa fa-angle-right"></i></button>`,
+    });
 
     $('.menu-trigger-btn').click(function() {
         $('.header .menu-wrapper').toggleClass('invisible');

@@ -1,6 +1,10 @@
 .table-data {
     .exchange-rate {
         margin-bottom: 40px;
+
+        h2 {
+            margin-bottom: 0 !important;
+        }
     }
     .grid {
         position: relative;
@@ -182,6 +186,9 @@
 }
 
 .news {
+    &.section-padding-50 {
+        padding-bottom: 0;
+    }
     .grid-cols-3 {
         grid-template-columns: 1.5fr 1fr 1fr !important;
     }

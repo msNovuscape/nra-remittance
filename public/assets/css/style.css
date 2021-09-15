@@ -82,10 +82,6 @@ img {
      object-fit: cover;
 }
 
-.slick {
-  overflow: hidden;
-}
-
 .btn {
   padding: 5px 15px;
   border-radius: 5px;
@@ -179,6 +175,14 @@ h3 {
   height: 100%;
 }
 
+.card--img-cover .overlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .card--img-cover img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -213,9 +217,17 @@ h3 {
   margin-bottom: 40px;
 }
 
+@media screen and (min-width: 1280px) {
+  .card--team {
+    margin-bottom: 0;
+  }
+}
+
 .card--team img {
   margin: 0 auto;
   display: block;
+  width: 150px;
+  height: 150px;
 }
 
 .card--team .card__img {
@@ -618,6 +630,7 @@ h3 {
       -ms-flex-order: 2;
           order: 2;
   padding-left: 15px;
+  max-width: 260px;
 }
 
 @media screen and (max-width: 1170px) {
@@ -647,12 +660,6 @@ h3 {
   max-width: -moz-max-content;
   max-width: max-content;
   margin-left: auto;
-}
-
-@media screen and (min-width: 1170px) {
-  .header .top-bar {
-    padding: 10px 0;
-  }
 }
 
 .header .menu {
@@ -872,12 +879,20 @@ h3 {
   }
 }
 
-.slick img {
+.hero-banner-slider {
+  margin-bottom: 0 !important;
+}
+
+.hero-banner-slider.slick {
+  overflow: hidden;
+}
+
+.hero-banner-slider.slick img {
   width: 100%;
 }
 
 @media screen and (min-width: 1170px) {
-  .slick img {
+  .hero-banner-slider.slick img {
     height: 500px;
     -o-object-fit: cover;
        object-fit: cover;
@@ -917,6 +932,12 @@ h3 {
 
 .hero-banner-slider .slick-next::before, .hero-banner-slider .slick-prev::before {
   color: var(--clr__black);
+}
+
+@media screen and (min-width: 992px) {
+  .footer.section-padding-50, .innerpage + .footer.subscribe {
+    padding: 50px 0;
+  }
 }
 
 .footer__bottom {
@@ -994,6 +1015,10 @@ h3 {
 
 .table-data .exchange-rate {
   margin-bottom: 40px;
+}
+
+.table-data .exchange-rate h2 {
+  margin-bottom: 0 !important;
 }
 
 .table-data .grid {
@@ -1174,6 +1199,10 @@ h3 {
 .article.home-article .grid-cols-2-1 {
   -ms-grid-columns: 2fr 1.3fr;
       grid-template-columns: 2fr 1.3fr;
+}
+
+.news.section-padding-50, .innerpage + .news.subscribe {
+  padding-bottom: 0;
 }
 
 .news .grid-cols-3 {
@@ -1598,6 +1627,12 @@ figure + .innerpage-article-content {
   text-align: right;
 }
 
+@media screen and (min-width: 768px) {
+  .text-md-right {
+    text-align: right;
+  }
+}
+
 .text-center {
   text-align: center;
 }
@@ -1656,6 +1691,12 @@ figure + .innerpage-article-content {
 
 .section-padding-50, .innerpage + .subscribe {
   padding: 50px 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .section-padding-50 .container > article h2, .innerpage + .subscribe .container > article h2 {
+    margin-bottom: 40px;
+  }
 }
 
 .article-wrapper {
@@ -1766,7 +1807,7 @@ figure + .innerpage-article-content {
   color: var(--clr__accent);
 }
 
-.text-white, .header .menu-trigger-btn, .mission-vision-article .heading-horizontal h2, .contact-page .form-wrapper h2, .contact-page .form-wrapper p, .contact-page .form-wrapper .btn, .slick-dots li button:before, .slick-dots li.slick-active button:before, .header .menu a, .header .top-bar ul.bg-menu a, .table-data-content h2, .table-data-content table, .card--img-cover h3, .card--img-cover p, .card--img-cover .card__meta-date, .card--gallery:hover .card__title, .btn-primary, .btn-secondary, .btn-third, .btn-accent, .btn-outline-white {
+.text-white, .header .menu-trigger-btn, .mission-vision-article .heading-horizontal h2, .contact-page .form-wrapper h2, .contact-page .form-wrapper p, .contact-page .form-wrapper .btn, .slick-dots li button:before, .slick-dots li.slick-active button:before, .header .menu a, .header .top-bar ul.bg-menu a, .table-data-content h2, .table-data-content table, .card--img-cover h3, .card--img-cover p, .card--img-cover .card__meta-date, .card--img-cover a, .card--gallery:hover .card__title, .btn-primary, .btn-secondary, .btn-third, .btn-accent, .btn-outline-white {
   color: #fff;
   color: var(--clr__white);
 }
@@ -1799,8 +1840,42 @@ figure + .innerpage-article-content {
   border-color: var(--clr__white);
 }
 
+.card--img-cover a {
+  text-decoration: none;
+}
+
 .card--news-list + * {
   margin-top: 20px;
+}
+
+.card--news-list h3 a {
+  text-decoration: none;
+  color: #767676;
+  color: var(--clr__text);
+}
+
+.card--news-list h3 a:hover {
+  color: #e9802d;
+  color: var(--clr__third);
+}
+
+.client-logo-slider .slick-next::before, .client-logo-slider .slick-prev::before, .client-logo-slider .slick-next, .client-logo-slider .slick-prev {
+  color: var(--clr-primary);
+}
+
+.client-logo-slider .slick-slide img {
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 0;
+  -o-object-fit: contain !important;
+     object-fit: contain !important;
+  height: 100%;
+  padding: 10px;
+  border: 1px solid #eee;
+}
+
+.client-logo-slider .slick-dots li button::before, .client-logo-slider .slick-dots li button {
+  color: var(--clr-primary);
 }
 
 .subscribe .container .bg-third, .subscribe .container .card--team h3:after, .card--team .subscribe .container h3:after, .subscribe .container .header .menu-trigger-btn, .header .subscribe .container .menu-trigger-btn, .subscribe .container .header .top-bar ul:first-of-type li.active > a, .header .top-bar ul:first-of-type .subscribe .container li.active > a, .subscribe .container .header .top-bar ul:first-of-type li a:hover, .header .top-bar ul:first-of-type li .subscribe .container a:hover, .subscribe .container .ui-datepicker-header, .subscribe .container .ui-state-default:hover, .subscribe .container .ui-state-highlight, .subscribe .container .ui-state-active, .subscribe .container .header .menu a:hover, .header .menu .subscribe .container a:hover, .subscribe .container .header .menu li.active a, .header .menu li.active .subscribe .container a, .subscribe .container .table-data .table.th-bg-third th, .table-data .table.th-bg-third .subscribe .container th, .subscribe .container .table-data .table-hover tbody tr:hover, .table-data .table-hover tbody .subscribe .container tr:hover, .subscribe .container .article .container:after, .article .subscribe .container .container:after, .subscribe .container .card--gallery:hover, .subscribe .container .btn-third {
@@ -1911,3 +1986,4 @@ figure + .innerpage-article-content {
     margin-bottom: 20px;
   }
 }
+/*# sourceMappingURL=style.css.map */

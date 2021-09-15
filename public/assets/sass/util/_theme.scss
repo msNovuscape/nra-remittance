@@ -154,14 +154,26 @@ h1, h2, h3, h4, h5, h6 {
 
 .card {
     &--img-cover {
-        h3, p, .card__meta-date {
+        h3, p, .card__meta-date, a {
             @extend .text-white;
+        }
+        a {
+            text-decoration: none;
         }
     }
 
     &--news-list {
         & + * {
             margin-top: 20px;
+        }
+
+        h3 a {
+            text-decoration: none;
+            @include var(color, $theme, clr__text);
+            
+            &:hover {
+                @include var(color, $theme, clr__third);
+            }
         }
     }
 
@@ -177,6 +189,24 @@ h1, h2, h3, h4, h5, h6 {
                 @extend .text-white;
             }
         }
+    }
+}
+
+.client-logo-slider {
+    .slick-next::before, .slick-prev::before, .slick-next, .slick-prev {
+        @include var(color, $theme, clr-primary);
+    }
+    .slick-slide img {
+        margin: 0 auto;
+        text-align: center;
+        border-radius: 0;
+        object-fit: contain !important;
+        height: 100%;
+        padding: 10px;
+        border: 1px solid #eee;
+    }
+    .slick-dots li button::before, .slick-dots li button {
+        @include var(color, $theme, clr-primary);
     }
 }
 
