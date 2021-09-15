@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="slick hero-banner-slider">
                     <div class="hero-banner-slider-item pos-rel">
-                        <img src="{{URL::asset('assets/image/nra_cover1.jpeg')}}" alt="banner img">
+                        <img src="{{URL::asset('assets/image/nra_cover1.jpg')}}" alt="banner img">
                         <!-- <article class="max-w-40 pos-abs">
                             <h1 class="text-white">Banner Title</h1>
                             <p class="text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore, placeat unde eum commodi quam tempora dignissimos suscipit delectus maxime ipsam?</p>
@@ -12,7 +12,7 @@
                         </article> -->
                     </div>
                     <div class="hero-banner-slider-item pos-rel">
-                        <img src="{{URL::asset('assets/image/nra_cover2.jpeg')}}" alt="banner img">
+                        <img src="{{URL::asset('assets/image/nra_cover2.jpg')}}" alt="banner img">
                         <!-- <article class="max-w-40 pos-abs">
                             <h1 class="text-white">Banner Title</h1>
                             <p class="text-white">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore, placeat unde eum commodi quam tempora dignissimos suscipit delectus maxime ipsam?</p>

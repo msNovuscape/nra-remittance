@@ -39,17 +39,17 @@
                                     <ul class="list-reset dropdown-menu bg-menu">
                                         <li class="{{$title == 'News' ? 'active' : ''}}"><a href="/news_and_update">News</a></li>
                                         <li class="{{$title == 'Gallery' ? 'active' : ''}}"><a href="/gallery">Gallery</a></li>
-                                        <li class=""><a href="#!">Events & Activities</a></li>
+                                        <li class="{{$title == 'Events & Activities' ? 'active' : ''}}"><a href="{{route('welcome.events_and_activities')}}">Events & Activities</a></li>
                                     </ul>
                                 </li>
                                 <li class="has-dropdown">
                                     <a href="#!">About <i class="fa fa-angle-down"></i></a>
                                     <ul class="list-reset dropdown-menu bg-menu">
                                         <li class="{{$title == 'About' ? 'active' : ''}}"><a href="/about">About Us</a></li>
-                                        <li><a href="/remmitance_overview">Remittance Overview in Nepal</a></li>
+                                        <li class="{{$title == 'Overview' ? 'active' : ''}}"><a href="/remmitance_overview">Remittance Overview in Nepal</a></li>
                                         <li class="{{$title == 'Message' ? 'active' : ''}}"><a href="/central_bank_message">Message From Central Bank</a></li>
-                                        <li class="{{$title == 'Members' ? 'active' : ''}}"><a href="{{route('welcome.member')}}">Committee</a></li>
-                                        <li class="{{$title == 'Committee' ? 'active' : ''}}"><a href="/committee">Members</a></li>
+                                        <li class="{{$title == 'Member' ? 'active' : ''}}"><a href="{{route('welcome.member')}}">Members</a></li>
+                                        <li class="{{$title == 'Committee' ? 'active' : ''}}"><a href="{{route('welcome.committee')}}">Committee</a></li>
                                     </ul>
                                 </li>
                                 <li class="{{$title == 'Contact' ? 'active' : ''}}"><a href="/contact">Contact</a></li>
@@ -157,10 +157,10 @@
                         <h3>Menu Links</h3>
                         <ul class="list-reset">
                             <li><a href="/">Home</a></li>
-                            <li><a href="#">Downloads</a></li>
+                            <li><a href="{{route('welcome.news_and_update')}}">News and Updates</a></li>
                             <li><a href="/central_bank_message">Message From Central Bank</a></li>
                             <li><a href="/remmitance_overview">Remittance Overview in Nepal</a></li>
-                            <li><a href="/team">Members</a></li>
+                            <li><a href="{{route('welcome.member')}}">Members</a></li>
                         </ul>
                     </div>
                     <div>

@@ -55,12 +55,11 @@ class MemberListController extends Controller
         $member_list =  MemberList::create([
 
             'phone' => $request['phone'],
-            'first_name' => $request['first_name'],
-            'last_name' => $request['last_name'],
+            'name' => $request['name'],
+            'organization' => $request['organization'],
             'address' => $request['address'],
-            'city' => $request['city'],
-            'country' => $request['country'],
-            'email' => $request['email'],
+            'designation' => $request['designation'],
+            'website_link' => $request['website_link'],
             'image_path' => $path ?? null,
             
         ]);
@@ -105,12 +104,11 @@ class MemberListController extends Controller
            
         }
         $member_list->phone = $request->phone;
-        $member_list->first_name = $request->first_name;
-        $member_list->last_name = $request->last_name;
+        $member_list->name = $request->name;
+        $member_list->designation = $request->designation;
         $member_list->address = $request->address;
-        $member_list->city = $request->city;
-        $member_list->country = $request->country;
-        $member_list->email = $request->email;
+        $member_list->organization = $request->organization;
+        $member_list->website_link = $request->website_link;
         $member_list->save();
         $request->session()->flash('alert-success', 'Member was successful updated!');
         return redirect('/admin/member_lists');

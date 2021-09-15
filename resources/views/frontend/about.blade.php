@@ -22,7 +22,7 @@
         <!-- article banner end -->
         
         <!-- news-list start -->
-        <section class="news about-news section-padding-50">
+        <!-- <section class="news about-news section-padding-50">
             <div class="container">
                 <div class="grid grid-cols-3 grid-gap-30">
                     <div class="card card--img-cover card--news pos-rel">
@@ -62,11 +62,11 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- news-list end -->
 
         <!-- Ad start -->
-        <section class="ad">
+        <!-- <section class="ad">
             <div class="container">
                 <div class="grid grid-cols-2 grid-gap-10">
                     <figure class="ad__box">
@@ -77,7 +77,7 @@
                     </figure>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- Ad end -->
 
         <!-- article start -->
@@ -116,7 +116,7 @@
         <!-- article end -->
         
         <!-- Ad start -->
-        <section class="ad" style="padding-bottom: 50px;">
+        <!-- <section class="ad" style="padding-bottom: 50px;">
             <div class="container">
                 <div class="grid grid-cols-2 grid-gap-10">
                     <figure class="ad__box">
@@ -127,7 +127,7 @@
                     </figure>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- Ad end -->
 
         <!-- Client start -->

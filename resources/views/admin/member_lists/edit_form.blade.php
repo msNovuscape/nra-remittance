@@ -46,66 +46,70 @@
                   {{csrf_field()}}
                   
                   <div class="row">
+                  @foreach($errors as $error)
+                    $error->message
+                  @endforeach
                     <div class="col-md-6 pr-1">
                       <div class="form-group">
-                        <label for = "first_name">First Name</label>
-                        <input type="text" class="form-control" id = "first_name" name = "first_name" value = "{{$member_list->first_name}}" placeholder="First name" required>
+                        <label for = "name">Name</label>
+                        <input type="text" class="form-control" id = "name" name = "name" placeholder="Full Name" value = "{{$member_list->name}}" required>
                       </div>
                     </div>
                     <div class="col-md-6 pl-1">
                       <div class="form-group">
-                        <label for = "last_name">Last Name</label>
-                        <input type="text" id = "last_name" name = "last_name" value = "{{$member_list->last_name}}" class="form-control" placeholder="Last name"required>
+                        <label for = "designation">Designation</label>
+                        <input type="text" id = "designation" name = "designation" class="form-control" placeholder="Designation" value = "{{$member_list->designation}}" required>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-6 pr-1">
+                    
                       <div class="form-group">
+                      
                         <label for = "phone">Phone</label>
-                        <input type="text" id = "phone" name = "phone" value = "{{$member_list->phone}}" class="form-control" placeholder="Phone" required>
+                          
+    
+
+                        <input type="text" id = "phone" name = "phone" class="form-control" placeholder="Phone" value = "{{$member_list->phone}}" required>
                       </div>
-                      @error('phone')
+                         @error('phone')
                               <p style = "color:red" class="flash-message">{{ $message }}</p>
                           @enderror
                     </div>
                     <div class="col-md-6 pl-1">
-                      <div class="form-group">
-                        <label for="email">Email address</label>
-                        <input type="email" id = "email" name = "email" value = "{{$member_list->email}}" class="form-control" placeholder="Email">
+                    <div>
+                        <label for = "image">Image</label>
+                        
+                        <input type="file" name = "image" value = "{{old('image')}}" class="form-control">
+                         @error('image')
+                              <p style = "color:red" class="fash-message">{{ $message }}</p>
+                          @enderror
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        <label for = "address">Address</label>
-                        <input type="text" id = "address" name = "address" value = "{{$member_list->address}}" class="form-control" placeholder="Home Address" required>
+                        <label for = "organization">Organization</label>
+                        <input type="text" id = "organization" name = "organization" class="form-control" placeholder="Organization Name" value = "{{$member_list->organization}}" required>
                       </div>
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-md-4 pr-1">
+                    <div class="col-md-6 pr-1">
                       <div class="form-group">
-                        <label for = "city">City</label>
-                        <input type="text" id = "city" name = "city" value = "{{$member_list->city}}" class="form-control" placeholder="City">
+                        <label for = "website_link">Website Link</label>
+                        <input type="text" id = "website_link" name = "website_link" class="form-control" placeholder="Website Link" value = "{{$member_list->website_link}}" required>
                       </div>
                     </div>
-                    <div class="col-md-4 pr-1">
+                    <div class="col-md-6 pr-1">
                       <div class="form-group">
-                        <label for = "country">Country</label>
-                        <input type="text" id = "country" name = "country" value = "{{$member_list->country}}" class="form-control" placeholder="Country">
+                        <label for = "address">Address</label>
+                        <input type="text" id = "address" name = "address" class="form-control" placeholder="Address" value = "{{$member_list->address}}" required>
                       </div>
                     </div>
-                    <div class="col-md-4 pl-1">
-                      <div>
-                        <label for = "image">Image</label>
-                        <input type="file" name = "image" class="form-control">
-                        @error('image')
-                              <p style = "color:red" class="fash-message">{{ $message }}</p>
-                          @enderror
-                      </div>
-                    </div>
+                    
                   </div>
                   <div class="row">
                   <div class="col-md-4">
@@ -128,7 +132,7 @@
                     <h5 class="title">{{$member_list->first_name .' '. $member_list->last_name}}</h5>
                   </a>
                   <p class="description">
-                    Member
+                  {{$member_list->organization}}
                   </p>
                   <p class="description">
                     {{$member_list->phone}}
@@ -143,9 +147,12 @@
                 <p class="description text-center">
                 {{$member_list->email}}
                 </p>
+                <p class="description text-center">
+                <a target = "blank" href = "{{$member_list->website_link}}">{{$member_list->website_link}}</a>
+</p>
               </div>
-              <hr>
-              <div class="button-container">
+              <!-- <hr> -->
+              <!-- <div class="button-container">
                 <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
                   <i class="fab fa-facebook-f"></i>
                 </button>
@@ -155,7 +162,7 @@
                 <button href="#" class="btn btn-neutral btn-icon btn-round btn-lg">
                   <i class="fab fa-google-plus-g"></i>
                 </button>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>

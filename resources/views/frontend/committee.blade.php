@@ -1,61 +1,31 @@
 @extends('frontend.master')
 
 @section('content')
-    <section class="innerpage section-padding-50 committee">
-        <div class="container">
-            <h1>Members</h1>
-            <article class="innerpage-article-content table-data-content">
-                <div class="table-responsive">
-                    <table class="table bg-secondary th-border">
-                        <thead>
-                            <tr>
-                                <th>S.N.</th>
-                                <th>Name</th>
-                                <th>Address</th>
-                                <th>Contact</th>
-                                <th>Visit Website</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Sreejan</td>
-                                <td>Nepal</td>
-                                <td>9811111111</td>
-                                <td><a href="#!" target="_blank">Link Here</a></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Sreejan</td>
-                                <td>Nepal</td>
-                                <td>9811111111</td>
-                                <td><a href="#!" target="_blank">Link Here</a></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Sreejan</td>
-                                <td>Nepal</td>
-                                <td>9811111111</td>
-                                <td><a href="#!" target="_blank">Link Here</a></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Sreejan</td>
-                                <td>Nepal</td>
-                                <td>9811111111</td>
-                                <td><a href="#!" target="_blank">Link Here</a></td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Sreejan</td>
-                                <td>Nepal</td>
-                                <td>9811111111</td>
-                                <td><a href="#!" target="_blank">Link Here</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <!-- Teams start -->
+        <section class="teams-list section-padding-50">
+            <div class="container">
+                <article class="section__header">
+                    <h1>Our Officer</h1>
+                </article>
+                <div class="grid grid-cols-3 grid-gap-30">
+                    @foreach($executive_committees as $executive_committee)
+                    <div class="card card--team">
+                        <figure class="card__img">
+                            <img src="{{ asset( 'storage/' . $executive_committee->image_path ) }}" class="circle" alt="team">
+                        </figure>
+                        <article class="card__body text-center">
+                            <h3>{{$executive_committee->first_name}} {{$executive_committee->last_name}}</h3>
+                            <div class="card__meta flex flex-content-between">
+                                <div class="card__meta-designation">{{$executive_committee->last_name}} <br> <span class="text">{{$executive_committee->designation}}</span></div>
+                                <div class="card__meta-designation">Location <br> <span class="text">{{$executive_committee->address}},{{$executive_committee->city}},{{$executive_committee->country}}</span></div>
+                            </div>
+                        </article>
+                    </div>
+                    @endforeach
+                    
                 </div>
-            </article>
-        </div>
-    </section>
-@endsection
+            </div>
+        </section>
+        <!-- Teams end -->
+
+        @endsection

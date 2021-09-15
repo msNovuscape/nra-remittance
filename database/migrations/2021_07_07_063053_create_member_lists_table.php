@@ -15,13 +15,12 @@ class CreateMemberListsTable extends Migration
     {
         Schema::create('member_lists', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('first_name');
-            $table->string('last_name');
+            $table->string('name');
+            $table->string('designation');
             $table->string('phone');
-            $table->string('email')->nullable();
             $table->string('address');
-            $table->string('city')->nullable();
-            $table->string('country')->nullable();
+            $table->string('organization');
+            $table->string('website_link');
             $table->string('image_path')->nullable();
             $table->boolean('status')->default(true);
             $table->timestamps();

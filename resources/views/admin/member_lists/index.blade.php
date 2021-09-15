@@ -59,13 +59,17 @@
                         Full Name
                       </th>
                       <th>
-                        Phone
+                        Post
                       </th>
-                      <th>
-                        Image
-                      </th>
+                      
                       <th>
                         Address
+                      </th>
+                      <th>
+                        Contact
+                      </th>
+                      <th>
+                        Website
                       </th>
                       <th class="text-right">
                         Action
@@ -75,16 +79,20 @@
                      @foreach($member_lists as $member_list)
                       <tr>
                           <td>
-                            {{$member_list->first_name .' '. $member_list->last_name}}
+                            {{$member_list->name}}
+                          </td>
+                          <td>
+                          {{$member_list->designation}}
+                          </td>
+                          
+                          <td>
+                          {{$member_list->address}}
                           </td>
                           <td>
                           {{$member_list->phone}}
                           </td>
                           <td>
-                           <img class="avatar border-gray" src="{{ asset( 'storage/' . $member_list->image_path ) }}">
-                          </td>
-                          <td>
-                          {{$member_list->address}}
+                          <a target = "_blank" href = "{{$member_list->website_link}}">{{$member_list->website_link}}</a>
                           </td>
                           <td class="text-right">
                             <a  href="{{route('edit_member_list',['id' => $member_list->id])}}"><i data-toggle="tooltip" data-placement="top" title="Edit" class="far fa-edit"></i></a>&nbsp;&nbsp;<a onclick="return confirm('Are you sure to delete this item?')" href = "{{route('delete_member_list',['id' => $member_list->id])}}"><i data-toggle="tooltip" data-placement="top" title="Delete" class="far fa-trash-alt"></i></a>

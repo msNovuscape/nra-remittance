@@ -11,6 +11,9 @@ use App\ExchangeRate;
 use App\ExecutiveCommittee;
 use App\Partner;
 use App\NewsAndUpdate;
+use App\MemberList;
+use App\CentralBankMessage;
+use App\ActsAndRegulation;
 
 class HomePageController extends Controller
 {
@@ -51,20 +54,39 @@ class HomePageController extends Controller
 
     public function member(){
         $title = "Member";
-        return view('frontend.team',compact('title'));
+        $members = MemberList::where('status',true)->orderBy('id','desc')->get();
+        return view('frontend.member',compact('title','members'));
     }
     public function acts_and_regulations(){
         $title = "Acts";
-        return view('frontend.acts_and_regulations',compact('title'));
+        $acts = ActsAndRegulation::where('status',true)->get();
+        return view('frontend.acts_and_regulations',compact('title','acts'));
+    }
+    public function events_and_activities(){
+        $title = "Events & Activities";
+        return view('frontend.events_and_activities',compact('title'));
     }
     public function gallery(){
         $title = "Gallery";
-        
-        return view('frontend.gallery',compact('title'));
+        $galleries = Gallery::where('status',true)->orderBy('id','desc')->get();
+        return view('frontend.gallery',compact('title','galleries'));
     }
     public function news_and_update(){
         $title = "News";
-        return view('frontend.news_and_update',compact('title'));
+        $news = NewsAndUpdate::where('status',true)->orderBy('id','desc')->get();
+        return view('frontend.news_and_update',compact('title','news'));
+    }
+    public function single_news(){
+        $request = request();
+        $single_news = NewsAndUpdate::findorfail($request['id']);
+        $title = $single_news->title;
+        return view('frontend.single_news',compact('title','single_news'));
+    }
+    public function single_gallery(){
+        $request = request();
+        $single_gallery = Gallery::findorfail($request['id']);
+        $title = $single_gallery->title;
+        return view('frontend.single_gallery',compact('title','single_gallery'));
     }
     public function contact(){
         $title = "Contact";
@@ -76,11 +98,13 @@ class HomePageController extends Controller
     }
     public function central_bank_message(){
         $title = "Message";
-        return view('frontend.central_bank_message',compact('title'));
+        $message = CentralBankMessage::where('status',true)->get();
+        return view('frontend.central_bank_message',compact('title','message'));
     }
     public function committee(){
         $title = "Committee";
-        return view('frontend.committee',compact('title'));
+        $executive_committees = ExecutiveCommittee::where('status',true)->get();
+        return view('frontend.committee',compact('title','executive_committees'));
     }
 
     public function post_gallery(Request $request){

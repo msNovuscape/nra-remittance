@@ -6,86 +6,21 @@
             <h1>Gallery</h1>
 
             <div class="grid grid-cols-4 grid-gap-30">
+                @forelse($galleries as $gallery)
                 <div class="card card--gallery">
-                    <a href="#">
+                    <a href="{{route('welcome.single_gallery',['id' => $gallery->id])}}">
                         <figure>
-                            <img src="https://cdn.pixabay.com/photo/2021/06/13/07/33/mountain-pass-6332476_960_720.jpg" alt="gallery caption here">
+                            <img src="{{ asset( 'storage/' . $gallery->image_path ) }}" alt="{{$gallery->title}}">
                         </figure>
                     </a>
                     <article class="card__body card--gallery__body">
-                        <a href="#" class="card__title">Gallery Title</a>
+                        <a href="{{route('welcome.single_gallery',['id' => $gallery->id])}}" class="card__title">{{$gallery->title}}</a>
                     </article>
                 </div>
-                <div class="card card--gallery">
-                    <a href="#">
-                        <figure>
-                            <img src="https://cdn.pixabay.com/photo/2021/06/13/07/33/mountain-pass-6332476_960_720.jpg" alt="gallery caption here">
-                        </figure>
-                    </a>
-                    <article class="card__body card--gallery__body">
-                        <a href="#" class="card__title">Gallery Title</a>
-                    </article>
-                </div>
-                <div class="card card--gallery">
-                    <a href="#">
-                        <figure>
-                            <img src="https://cdn.pixabay.com/photo/2021/06/13/07/33/mountain-pass-6332476_960_720.jpg" alt="gallery caption here">
-                        </figure>
-                    </a>
-                    <article class="card__body card--gallery__body">
-                        <a href="#" class="card__title">Gallery Title</a>
-                    </article>
-                </div>
-                <div class="card card--gallery">
-                    <a href="#">
-                        <figure>
-                            <img src="https://cdn.pixabay.com/photo/2021/06/13/07/33/mountain-pass-6332476_960_720.jpg" alt="gallery caption here">
-                        </figure>
-                    </a>
-                    <article class="card__body card--gallery__body">
-                        <a href="#" class="card__title">Gallery Title</a>
-                    </article>
-                </div>
-                <div class="card card--gallery">
-                    <a href="#">
-                        <figure>
-                            <img src="https://cdn.pixabay.com/photo/2021/06/13/07/33/mountain-pass-6332476_960_720.jpg" alt="gallery caption here">
-                        </figure>
-                    </a>
-                    <article class="card__body card--gallery__body">
-                        <a href="#" class="card__title">Gallery Title</a>
-                    </article>
-                </div>
-                <div class="card card--gallery">
-                    <a href="#">
-                        <figure>
-                            <img src="https://cdn.pixabay.com/photo/2021/06/13/07/33/mountain-pass-6332476_960_720.jpg" alt="gallery caption here">
-                        </figure>
-                    </a>
-                    <article class="card__body card--gallery__body">
-                        <a href="#" class="card__title">Gallery Title</a>
-                    </article>
-                </div>
-                <div class="card card--gallery">
-                    <a href="#">
-                        <figure>
-                            <img src="https://cdn.pixabay.com/photo/2021/06/13/07/33/mountain-pass-6332476_960_720.jpg" alt="gallery caption here">
-                        </figure>
-                    </a>
-                    <article class="card__body card--gallery__body">
-                        <a href="#" class="card__title">Gallery Title</a>
-                    </article>
-                </div>
-                <div class="card card--gallery">
-                    <a href="#">
-                        <figure>
-                            <img src="https://cdn.pixabay.com/photo/2021/06/13/07/33/mountain-pass-6332476_960_720.jpg" alt="gallery caption here">
-                        </figure>
-                    </a>
-                    <article class="card__body card--gallery__body">
-                        <a href="#" class="card__title">Gallery Title</a>
-                    </article>
-                </div>
+                @empty
+                <p>No data available!</p>
+                @endforelse
+                
             </div>
         </div>
     </section>

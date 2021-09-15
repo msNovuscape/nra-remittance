@@ -24,11 +24,14 @@ Route::group(['middleware' => 'guest'], function(){
     Route::get('/contact','Frontend\HomePageController@contact')->name('welcome.contact');
     Route::get('/remmitance_overview','Frontend\HomePageController@overview')->name('welcome.overview');
     Route::get('/gallery','Frontend\HomePageController@gallery')->name('welcome.gallery');
+    Route::get('/gallery/{id}','Frontend\HomePageController@single_gallery')->name('welcome.single_gallery');
     Route::get('/central_bank_message','Frontend\HomePageController@central_bank_message')->name('welcome.central_bank_message');
     Route::get('/acts_and_regulations','Frontend\HomePageController@acts_and_regulations')->name('welcome.acts_and_regulations');
     Route::get('/news_and_update','Frontend\HomePageController@news_and_update')->name('welcome.news_and_update');
-    Route::get('/committee','Frontend\HomePageController@committee')->name('welcome.committee');
+    Route::get('/events_and_activities','Frontend\HomePageController@events_and_activities')->name('welcome.events_and_activities');
+    Route::get('/news/{id}','Frontend\HomePageController@single_news')->name('welcome.single_news');
     Route::get('/member','Frontend\HomePageController@member')->name('welcome.member');
+    Route::get('/committee','Frontend\HomePageController@committee')->name('welcome.committee');
     Route::get('/search','Frontend\HomePageController@search')->name('welcome.search');
 
 
