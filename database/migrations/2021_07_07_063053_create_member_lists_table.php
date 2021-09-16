@@ -17,10 +17,10 @@ class CreateMemberListsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('designation');
-            $table->string('phone');
+            $table->string('phone')->nullable();
             $table->string('address');
             $table->string('organization');
-            $table->string('website_link');
+            $table->string('website_link')->nullable();
             $table->string('image_path')->nullable();
             $table->boolean('status')->default(true);
             $table->timestamps();

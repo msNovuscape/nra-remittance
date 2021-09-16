@@ -117,7 +117,7 @@
         <section class="client section-padding-50">
             <div class="container">
                 <article>
-                    <h2>Our Member</h2>
+                    <h2>Our Partners</h2>
                 </article>
                 <!-- <div class="grid grid-cols-5 grid-gap-15"> -->
                     <div class="slick client-logo-slider">

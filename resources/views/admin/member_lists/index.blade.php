@@ -89,11 +89,15 @@
                           {{$member_list->address}}
                           </td>
                           <td>
-                          {{$member_list->phone}}
+                          {{$member_list->phone ?? 'N/A'}}
                           </td>
-                          <td>
-                          <a target = "_blank" href = "{{$member_list->website_link}}">{{$member_list->website_link}}</a>
-                          </td>
+                            @if($member_list->website_link == null)
+                            <td>N/A</td>
+                            @else
+                            <td>
+                            <a target = "_blank" href = "{{$member_list->website_link}}">{{$member_list->website_link}}</a>
+                            </td>
+                          @endif
                           <td class="text-right">
                             <a  href="{{route('edit_member_list',['id' => $member_list->id])}}"><i data-toggle="tooltip" data-placement="top" title="Edit" class="far fa-edit"></i></a>&nbsp;&nbsp;<a onclick="return confirm('Are you sure to delete this item?')" href = "{{route('delete_member_list',['id' => $member_list->id])}}"><i data-toggle="tooltip" data-placement="top" title="Delete" class="far fa-trash-alt"></i></a>
                           </td>

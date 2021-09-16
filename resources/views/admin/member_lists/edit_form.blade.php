@@ -71,7 +71,7 @@
                           
     
 
-                        <input type="text" id = "phone" name = "phone" class="form-control" placeholder="Phone" value = "{{$member_list->phone}}" required>
+                        <input type="text" id = "phone" name = "phone" class="form-control" placeholder="Phone" value = "{{$member_list->phone}}">
                       </div>
                          @error('phone')
                               <p style = "color:red" class="flash-message">{{ $message }}</p>
@@ -100,7 +100,7 @@
                     <div class="col-md-6 pr-1">
                       <div class="form-group">
                         <label for = "website_link">Website Link</label>
-                        <input type="text" id = "website_link" name = "website_link" class="form-control" placeholder="Website Link" value = "{{$member_list->website_link}}" required>
+                        <input type="text" id = "website_link" name = "website_link" class="form-control" placeholder="Website Link" value = "{{$member_list->website_link}}">
                       </div>
                     </div>
                     <div class="col-md-6 pr-1">

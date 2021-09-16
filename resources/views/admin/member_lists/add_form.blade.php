@@ -69,7 +69,7 @@
                           
     
 
-                        <input type="text" id = "phone" name = "phone" class="form-control" placeholder="Phone" value = "{{old('phone')}}" required>
+                        <input type="text" id = "phone" name = "phone" class="form-control" placeholder="Phone" value = "{{old('phone')}}">
                       </div>
                          @error('phone')
                               <p style = "color:red" class="flash-message">{{ $message }}</p>

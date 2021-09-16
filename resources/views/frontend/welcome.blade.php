@@ -300,7 +300,7 @@
                     <div class="grid grid-cols-2 grid-gap-30">
                         <h2>OFFICE BEARERS</h2>
                         <div class="text-md-right">
-                            <a href="{{route('welcome.committee')}}" class="btn btn-outline-third pill" target="_blank">View All <i class="fa fa-long-arrow-right"></i></a>
+                            <a href="{{route('welcome.committee')}}" class="btn btn-outline-third pill">View All <i class="fa fa-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </article>

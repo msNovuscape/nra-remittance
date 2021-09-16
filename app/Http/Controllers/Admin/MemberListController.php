@@ -42,7 +42,6 @@ class MemberListController extends Controller
         $this->validate($request, [
             
              'image' => 'mimes:jpeg,png',
-             'phone' => 'required|numeric',
             
          ]);
          
@@ -87,7 +86,6 @@ class MemberListController extends Controller
         $this->validate($request, [
             
             'image' => 'mimes:jpeg,png',
-            'phone' => 'required|numeric',
            
         ]);
         
