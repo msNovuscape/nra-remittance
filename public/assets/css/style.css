@@ -1863,15 +1863,37 @@ figure + .innerpage-article-content {
   color: var(--clr-primary);
 }
 
+.client-logo-slider .slick-slide {
+  padding: 0 6px;
+}
+
 .client-logo-slider .slick-slide img {
   margin: 0 auto;
   text-align: center;
   border-radius: 0;
   -o-object-fit: contain !important;
      object-fit: contain !important;
-  height: 100%;
+  width: 100%;
+  height: 120px;
   padding: 10px;
   border: 1px solid #eee;
+  border-radius: 12px;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.client-logo-slider .slick-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.client-logo-slider .slick-list {
+  margin: 0 -6px;
+  padding: 20px;
 }
 
 .client-logo-slider .slick-dots li button::before, .client-logo-slider .slick-dots li button {
